@@ -33,22 +33,22 @@ pacman_packages=(
 	wget
 	base-devel
 	cmake
-    pipewire 
-    pipewire-audio 
-    pipewire-alsa 
-    pipewire-pulse 
-    pipewire-jack
-    wireplumber
+  pipewire 
+  pipewire-audio 
+  pipewire-alsa 
+  pipewire-pulse 
+  pipewire-jack
+  wireplumber
 	obs-studio
 	flatpak
-    xorg-server
-    xorg-xinit
-    xorg-xrandr
-    libx11
-    libxinerama
-    libxft
-    webkit2gtk
-    firefox
+  xorg-server
+  xorg-xinit
+  xorg-xrandr
+  libx11
+  libxinerama
+  libxft
+  webkit2gtk
+  firefox
 )
 
 i=0
@@ -73,7 +73,10 @@ sudo make clean install
 cd ..
 cd dmenu
 sudo make clean install
-cd ..
+cd .. 
+cd dwm
+sudo make clean install
+cd ../..
 
 
 
