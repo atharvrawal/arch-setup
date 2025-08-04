@@ -78,6 +78,9 @@ cd dwm
 sudo make clean install
 cd ../..
 
+echo "exec dwm" >> ~/.xinitrc
+echo "startx" >> ~/.bash_profile3
+
 
 
 
