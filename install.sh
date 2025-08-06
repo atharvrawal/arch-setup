@@ -50,6 +50,8 @@ pacman_packages=(
 	webkit2gtk
 	firefox
 	kitty
+	rofi
+	ly
 )
 
 i=0
@@ -68,6 +70,8 @@ echo ""
 systemctl --user enable pipewire pipewire-pulse wireplumber
 check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
 
+sudo systemctl enable ly
+
 cd suckless
 cd dmenu
 sudo make clean install
@@ -77,7 +81,7 @@ sudo make clean install
 cd ../..
 
 echo "exec dwm" >> ~/.xinitrc
-echo "startx" >> ~/.bash_profile
+chmod +x ~/.xinitrc
 
 
 
