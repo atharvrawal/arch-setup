@@ -69,9 +69,6 @@ systemctl --user enable pipewire pipewire-pulse wireplumber
 check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
 
 cd suckless
-cd st
-sudo make clean install
-cd ..
 cd dmenu
 sudo make clean install
 cd .. 
