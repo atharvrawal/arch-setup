@@ -100,7 +100,7 @@ echo ""
 
 yay_packages=(
 	"elecwhat-bin"
-	# "brave-bin"
+	"brave-bin"
 	"visual-studio-code-bin"
 )
 
@@ -125,8 +125,6 @@ echo "Installing flatpacks..."
 flatpacks=(
   "md.obsidian.Obsidian"
   "com.discordapp.Discord"
-  "com.spotify.Client"
-  "com.obsproject.Studio"
   "org.kde.kate"
   "org.videolan.VLC"
   "com.rafaelmardojai.Blanket"
