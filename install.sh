@@ -49,6 +49,7 @@ pacman_packages=(
 	libxft
 	webkit2gtk
 	firefox
+	kitty
 )
 
 i=0
@@ -101,6 +102,7 @@ echo ""
 yay_packages=(
 	"elecwhat-bin"
 	"brave-bin"
+	"bluetuith"
 	"visual-studio-code-bin"
 )
 
