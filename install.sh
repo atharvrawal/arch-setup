@@ -96,6 +96,8 @@ yay_packages=(
 	"bluetuith"
 	"visual-studio-code-bin"
 	"ttf-firacode-nerd"
+	"materia-gtk-theme"
+	"papirus-icon-theme"
 )
 j=0
 total=${#yay_packages[@]}
@@ -164,7 +166,7 @@ echo "alias lh='ls -lh'">>.zshrc
 mkdir -p ~/.config/gtk-4.0
 cat > ~/.config/gtk-3.0/settings.ini <<EOF
 [Settings]
-gtk-theme-name=Arc-Dark
+gtk-theme-name=Materia-dark
 gtk-icon-theme=Papirus-Dark
 gtk-application-prefer-dark-theme=true
 EOF
@@ -172,7 +174,7 @@ EOF
 mkdir -p ~/.config/gtk-4.0
 cat > ~/.config/gtk-4.0/settings.ini <<EOF
 [Settings]
-gtk-theme-name=Arc-Dark
+gtk-theme-name=Materia-dark
 gtk-icon-theme=Papirus-Dark
 gtk-application-prefer-dark-theme=true
 EOF
