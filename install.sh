@@ -159,7 +159,23 @@ echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.z
 echo "alias ls='exa --icons'">>.zshrc
 echo "alias la='ls -la'">>.zshrc
 echo "alias lh='ls -lh'">>.zshrc
-echo "alias cat='bat'">>.zshrc
+
+# Dark Theme Setup
+mkdir -p ~/.config/gtk-4.0
+cat > ~/.config/gtk-3.0/settings.ini <<EOF
+[Settings]
+gtk-theme-name=Arc-Dark
+gtk-icon-theme=Papirus-Dark
+gtk-application-prefer-dark-theme=true
+EOF
+
+mkdir -p ~/.config/gtk-4.0
+cat > ~/.config/gtk-4.0/settings.ini <<EOF
+[Settings]
+gtk-theme-name=Arc-Dark
+gtk-icon-theme=Papirus-Dark
+gtk-application-prefer-dark-theme=true
+EOF
 
 # DWM Setup
 cd suckless
