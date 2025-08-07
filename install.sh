@@ -13,7 +13,7 @@ check_status(){
 	fi
 }
 
-
+# System Update & Upgrade
 echo "Updating & Upgrading Arch..."
 sudo pacman -Syy --noconfirm >/dev/null
 check_status "Failed to update the package database."
@@ -50,8 +50,15 @@ pacman_packages=(
 	webkit2gtk
 	firefox
 	kitty
+	zsh
 	rofi
 	ly
+	bat
+	exa
+	thunar 
+	gvfs 
+	gvfs-mtp 
+	gvfs-smb
 )
 
 i=0
@@ -66,23 +73,6 @@ while [ $i -lt $total ]; do
 done
 echo "All pacman packages installed successfully"
 echo ""
-
-systemctl --user enable pipewire pipewire-pulse wireplumber
-check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
-
-sudo systemctl enable ly
-
-cd suckless
-cd dmenu
-sudo make clean install
-cd .. 
-cd dwm
-sudo make clean install
-cd ../..
-
-echo "exec dwm" >> ~/.xinitrc
-chmod +x ~/.xinitrc
-
 
 
 
@@ -105,9 +95,8 @@ yay_packages=(
 	"brave-bin"
 	"bluetuith"
 	"visual-studio-code-bin"
+	"ttf-firacode-nerd"
 )
-
-
 j=0
 total=${#yay_packages[@]}
 
@@ -124,6 +113,7 @@ echo ""
 
 
 
+
 echo "Installing flatpacks..."
 flatpacks=(
   "md.obsidian.Obsidian"
@@ -132,7 +122,6 @@ flatpacks=(
   "org.videolan.VLC"
   "com.rafaelmardojai.Blanket"
 )
-
 k=0 
 total=${#flatpacks[@]}
 while [ $k -lt $total ]; do
@@ -143,3 +132,43 @@ while [ $k -lt $total ]; do
   ((k++))
 done
 echo "All flatpak packages installed successfully!"
+
+
+
+
+# Audio Server Setup (Pipewire)
+systemctl --user enable pipewire pipewire-pulse wireplumber
+check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
+
+# LY Setup
+sudo systemctl enable ly
+check_status "Failed to enable ly"
+
+# LazyVim Setup
+git clone https://github.com/LazyVim/starter ~/.config/nvim 
+rm -rf ~/.config/nvim/.git
+
+# Kitty Setup
+chsh -s /usr/bin/zsh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
+echo 'source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme'>>.zshrc
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.config/zsh/plugins/syntax-highlighting 
+echo 'source ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh'>>.zshrc
+echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh'>>.zshrc
+echo "alias ls='exa --icons'">>.zshrc
+echo "alias la='ls -la'">>.zshrc
+echo "alias lh='ls -lh'">>.zshrc
+echo "alias cat='bat'">>.zshrc
+
+# DWM Setup
+cd suckless
+cd dmenu
+sudo make clean install
+cd .. 
+cd dwm
+sudo make clean install
+cd ../..
+echo "exec dwm" >> ~/.xinitrc
+chmod +x ~/.xinitrc
+
