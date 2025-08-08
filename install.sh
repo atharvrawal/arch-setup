@@ -51,7 +51,6 @@ pacman_packages=(
 	firefox
 	kitty
 	zsh
-	rofi
 	ly
 	bat
 	exa
@@ -98,6 +97,7 @@ yay_packages=(
 	"ttf-firacode-nerd"
 	"materia-gtk-theme"
 	"papirus-icon-theme"
+	"albert"
 )
 j=0
 total=${#yay_packages[@]}
@@ -120,7 +120,6 @@ echo "Installing flatpacks..."
 flatpacks=(
   "md.obsidian.Obsidian"
   "com.discordapp.Discord"
-  "org.kde.kate"
   "org.videolan.VLC"
   "com.rafaelmardojai.Blanket"
 )
@@ -145,6 +144,10 @@ check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
 # LY Setup
 sudo systemctl enable ly
 check_status "Failed to enable ly"
+
+# Rust Setup
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
 
 # LazyVim Setup
 git clone https://github.com/LazyVim/starter ~/.config/nvim 
@@ -178,6 +181,25 @@ gtk-theme-name=Materia-dark
 gtk-icon-theme=Papirus-Dark
 gtk-application-prefer-dark-theme=true
 EOF
+
+# Thunar Setup (xdg-open)
+mkdir -p ~/.local/share/applications
+cat > ~/.local/share/applications/Thunar.desktop <<EOF
+[Desktop Entry]
+Name=Thunar
+Exec=thunar %f
+Icon=system-file-manager
+Terminal=false
+Type=Application
+Categories=Utility;Core;GTK;
+MimeType=inode/directory;
+EOF
+update-desktop-database ~/.local/share/applications
+
+# Albert Setup
+echo 'albert &' >> ~/.xinitrc
+
+
 
 # DWM Setup
 cd suckless
