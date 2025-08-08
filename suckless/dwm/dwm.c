@@ -142,6 +142,7 @@ typedef struct {
 
 /*-----------------------------------------my function declarations-----------------------------------------*/
 void shiftview(const Arg *arg);
+void shiftwindow(const Arg *arg);
 
 /* function declarations */
 static void applyrules(Client *c);
@@ -292,6 +293,40 @@ shiftview(const Arg *arg) {
 
 	view(&shifted);
 }
+
+void 
+shiftwindow(const Arg *arg){
+	Client *c = selmon->sel; // Client is a struct representing a window (x11 managed)
+	if (!c) // selmon pointer to the currently selected monitor (Monitor *)
+		return; // sel is pointer to the currently focused client on that monitor   
+	unsigned int shifted;
+
+    if (arg->i > 0) // args = positions to shift i.e. input given while calling function
+        shifted = (c->tags << arg->i) // left shifting tag associated with c
+                | (c->tags >> (LENGTH(tags) - arg->i));
+    else
+        shifted = (c->tags >> (-arg->i))
+                | (c->tags << (LENGTH(tags) + arg->i));
+
+    shifted &= TAGMASK;
+
+    const Arg newtags = {.ui = shifted};
+    tag(&newtags);
+
+	// '|' here is bitwise OR, i.e. returns 1 for everything except 0 | 0
+	// tags are represente as 0b000000001, 0b000000010, 0b000000100 .. etc
+	// hence left shift increases and right shift decreases the bits
+	// taking an example lets say i am moving from 1 to 2
+	// 0b000000001 -> 0b000000010 (this is the output for the first part of the xor)
+	// 0b000000001 -> 0b000000000 (1 gets right shifted 8 time, gets sent out of scope)
+	// upon xor we only get the first output
+	// 0b010000000 -> 0b100000000 (again simple left shift as we would expect)
+	// 0b010000000 -> 0b000000000 (1 again gets sent 8 times which gives 0)
+	// only for the case of 9 -> 1, 9 gets left shifted out of scope 
+	// and 1 gets right shifted 9 times to reflect the first tag
+	// hence enabling circular tag
+}
+
 
 
 /* original function implementations */

@@ -103,6 +103,8 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ ALTKEY,                       XK_l,      shiftview,      {.i = +1}},
 	{ ALTKEY,                       XK_h,      shiftview,      {.i = -1}},
+	{ ALTKEY|ShiftMask,             XK_l,      shiftwindow,    {.i = +1}},
+	{ ALTKEY|ShiftMask,             XK_h,      shiftwindow,    {.i = -1}},
 };
 
 /* button definitions */
