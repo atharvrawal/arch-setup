@@ -164,6 +164,10 @@ echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.z
 echo "alias ls='exa --icons'">>.zshrc
 echo "alias la='ls -la'">>.zshrc
 echo "alias lh='ls -lh'">>.zshrc
+echo 'bindkey "^[[1;5D" backward-word      # Ctrl+Left'>>.zshrc
+echo 'bindkey "^[[1;5C" forward-word       # Ctrl+Right'>>.zshrc
+echo 'bindkey "^[[3~" delete-char          # Delete'>>.zshrc
+echo 'bindkey "^H" backward-kill-word      # Ctrl+Backspace'>>.zshrc
 
 # Dark Theme Setup
 mkdir -p ~/.config/gtk-4.0
