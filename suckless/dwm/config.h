@@ -1,12 +1,14 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */ // Modified
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = { "FiraCode Nerd Font:size=10" }; // Modified
+static const char dmenufont[]       = "FiraCode Nerd Font:size=10"; // Modified
+static const unsigned int gappx     = 6;        /* gaps between windows */  // Modified
+
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -34,9 +36,8 @@ static const Rule rules[] = {
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */ // Modified
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
-
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
@@ -46,7 +47,7 @@ static const Layout layouts[] = {
 
 /* key definitions */
 #define ALTKEY Mod1Mask
-#define MODKEY Mod4Mask
+#define MODKEY Mod4Mask // Modified
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -54,20 +55,20 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/kitty", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/kitty", "-c", cmd, NULL } } // Modified
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "kitty", NULL };
-static const char *filecmd[] = {"thunar", NULL};
+static const char *termcmd[]  = { "kitty", NULL }; // Modified
+static const char *filecmd[] = {"thunar", NULL}; // Modified
 
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
-	{ ALTKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_e,      spawn,          {.v = filecmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } }, 
+	{ ALTKEY,                       XK_Return, spawn,          {.v = termcmd } }, // Modified
+	{ MODKEY,                       XK_e,      spawn,          {.v = filecmd } }, // Modified
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -98,11 +99,11 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ ALTKEY,                       XK_l,      shiftview,      {.i = +1}},
-	{ ALTKEY,                       XK_h,      shiftview,      {.i = -1}},
-	{ ALTKEY|ShiftMask,             XK_l,      shiftwindow,    {.i = +1}},
-	{ ALTKEY|ShiftMask,             XK_h,      shiftwindow,    {.i = -1}},
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, // Modified
+	{ ALTKEY,                       XK_l,      shiftview,      {.i = +1}}, // Modified
+	{ ALTKEY,                       XK_h,      shiftview,      {.i = -1}}, // Modified
+	{ ALTKEY|ShiftMask,             XK_l,      shiftwindow,    {.i = +1}}, // Modified
+	{ ALTKEY|ShiftMask,             XK_h,      shiftwindow,    {.i = -1}}, // Modified
 };
 
 /* button definitions */

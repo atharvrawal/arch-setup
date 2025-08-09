@@ -1092,7 +1092,7 @@ manage(Window w, XWindowAttributes *wa)
 
 	c = ecalloc(1, sizeof(Client));
 	c->win = w;
-	/* geometry */
+	/* geometry */ 
 	c->x = c->oldx = wa->x;
 	c->y = c->oldy = wa->y;
 	c->w = c->oldw = wa->width;
@@ -1341,12 +1341,40 @@ void
 resizeclient(Client *c, int x, int y, int w, int h)
 {
 	XWindowChanges wc;
-
-	c->oldx = c->x; c->x = wc.x = x;
-	c->oldy = c->y; c->y = wc.y = y;
-	c->oldw = c->w; c->w = wc.width = w;
-	c->oldh = c->h; c->h = wc.height = h;
+	unsigned int n; // Modified
+	unsigned int gapoffset;
+	unsigned int gapincr;
+	Client *nbc;
+	
+	// c->oldx = c->x; c->x = wc.x = x;
+	// c->oldy = c->y; c->y = wc.y = y;
+	// c->oldw = c->w; c->w = wc.width = w;
+	// c->oldh = c->h; c->h = wc.height = h;
 	wc.border_width = c->bw;
+
+	/* Get number of clients for the client's monitor */ // Modified
+	for (n = 0, nbc = nexttiled(c->mon->clients); nbc; nbc = nexttiled(nbc->next), n++); // Modified
+
+	/* Do nothing if layout is floating */ // Modified
+	if (c->isfloating || c->mon->lt[c->mon->sellt]->arrange == NULL) { // Modified
+		gapincr = gapoffset = 0; // Modified
+	} else { // Modified
+		/* Remove border and gap if layout is monocle or only one client */ // Modified
+		if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) { // Modified
+			gapoffset = 0; // Modified
+			gapincr = -2 * borderpx; // Modified
+			wc.border_width = 0; // Modified
+		} else { // Modified
+			gapoffset = gappx; // Modified
+			gapincr = 2 * gappx; // Modified
+		} // Modified
+	} // Modified
+
+	c->oldx = c->x; c->x = wc.x = x + gapoffset; // Modified
+	c->oldy = c->y; c->y = wc.y = y + gapoffset; // Modified
+	c->oldw = c->w; c->w = wc.width = w - gapincr; // Modified
+	c->oldh = c->h; c->h = wc.height = h - gapincr; // Modified
+
 	XConfigureWindow(dpy, c->win, CWX|CWY|CWWidth|CWHeight|CWBorderWidth, &wc);
 	configure(c);
 	XSync(dpy, False);
@@ -1756,7 +1784,8 @@ tile(Monitor *m)
 	for (i = my = ty = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), i++)
 		if (i < m->nmaster) {
 			h = (m->wh - my) / (MIN(n, m->nmaster) - i);
-			resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
+			// resize(c, m->wx, m->wy + my, mw - (2*c->bw), h - (2*c->bw), 0);
+			resize(c, m->wx, m->wy + my, mw - (2*c->bw) + (n > 1 ? gappx : 0), h - (2*c->bw), 0);
 			if (my + HEIGHT(c) < m->wh)
 				my += HEIGHT(c);
 		} else {
