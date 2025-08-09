@@ -39,3 +39,7 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 - Set theme to "Yosemite Dark"
 - Check all boxes in the window pane
 - Check desired boxes in the plugins pane
+
+## Dwm Patches used 
+- `useless gap`
+- `nextprev -> shiftview`
