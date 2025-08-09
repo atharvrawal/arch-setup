@@ -62,7 +62,6 @@ pacman_packages=(
 
 i=0
 total=${#pacman_packages[@]}
-
 while [ $i -lt $total ]; do
   pkg=${pacman_packages[$i]}
   sudo pacman -S --needed --noconfirm "$pkg" >/dev/null 2>&1
@@ -75,18 +74,18 @@ echo ""
 
 
 
-echo "Installing Yay..."
-git clone https://aur.archlinux.org/yay.git >/dev/null 2>&1
-check_status "Failed to clone yay repository."
-cd yay || { echo "Failed to change directory to yay."; exit 1; }
-makepkg -si --noconfirm >/dev/null 2>&1
-check_status "Failed to build and install yay."
-yay --version
-cd ..
-sudo rm -rf yay >/dev/null
-check_status "Failed to remove the yay package"
-echo "Above Version is yay version and is Successfully Installed"
-echo ""
+#echo "Installing Yay..."
+#git clone https://aur.archlinux.org/yay.git >/dev/null 2>&1
+#check_status "Failed to clone yay repository."
+#cd yay || { echo "Failed to change directory to yay."; exit 1; }
+#makepkg -si --noconfirm >/dev/null 2>&1
+#check_status "Failed to build and install yay."
+#yay --version
+#cd ..
+#sudo rm -rf yay >/dev/null
+#check_status "Failed to remove the yay package"
+#echo "Above Version is yay version and is Successfully Installed"
+#echo ""
 
 
 yay_packages=(
@@ -97,7 +96,6 @@ yay_packages=(
 	"ttf-firacode-nerd"
 	"materia-gtk-theme"
 	"papirus-icon-theme"
-	"albert"
 )
 j=0
 total=${#yay_packages[@]}
@@ -156,21 +154,21 @@ rm -rf ~/.config/nvim/.git
 # Kitty Setup
 chsh -s /usr/bin/zsh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
-echo 'source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme'>>.zshrc
+echo 'source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme'>>~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.config/zsh/plugins/syntax-highlighting 
-echo 'source ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh'>>.zshrc
-echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh'>>.zshrc
-echo "alias ls='exa --icons'">>.zshrc
-echo "alias la='ls -la'">>.zshrc
-echo "alias lh='ls -lh'">>.zshrc
-echo 'bindkey "^[[1;5D" backward-word      # Ctrl+Left'>>.zshrc
-echo 'bindkey "^[[1;5C" forward-word       # Ctrl+Right'>>.zshrc
-echo 'bindkey "^[[3~" delete-char          # Delete'>>.zshrc
-echo 'bindkey "^H" backward-kill-word      # Ctrl+Backspace'>>.zshrc
+echo 'source ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh'>>~/.zshrc
+echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh'>>~/.zshrc
+echo "alias ls='exa --icons'">>~/.zshrc
+echo "alias la='ls -la'">>~/.zshrc
+echo "alias lh='ls -lh'">>~/.zshrc
+echo 'bindkey "^[[1;5D" backward-word      # Ctrl+Left'>>~/.zshrc
+echo 'bindkey "^[[1;5C" forward-word       # Ctrl+Right'>>~/.zshrc
+echo 'bindkey "^[[3~" delete-char          # Delete'>>~/.zshrc
+echo 'bindkey "^H" backward-kill-word      # Ctrl+Backspace'>>~/.zshrc
 
 # Dark Theme Setup
-mkdir -p ~/.config/gtk-4.0
+mkdir -p ~/.config/gtk-3.0
 cat > ~/.config/gtk-3.0/settings.ini <<EOF
 [Settings]
 gtk-theme-name=Materia-dark
@@ -202,6 +200,8 @@ update-desktop-database ~/.local/share/applications
 
 # Albert Setup
 echo 'albert &' >> ~/.xinitrc
+
+
 
 
 
