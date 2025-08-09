@@ -7,7 +7,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "FiraCode Nerd Font:size=10" }; // Modified
 static const char dmenufont[]       = "FiraCode Nerd Font:size=10"; // Modified
-static const unsigned int gappx     = 6;        /* gaps between windows */  // Modified
+static const unsigned int gappx     = 0;        /* gaps between windows */  // Modified
 
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
