@@ -51,8 +51,8 @@ echo ""
 echo "Installing pacman packages..."
 pacman_packages=(
 	firefox
-    flatpak
-    obs-studio
+  flatpak
+  obs-studio
 	bat
 	exa
 	thunar 
@@ -94,11 +94,9 @@ yay_packages=(
 	"brave-bin"
 	"bluetuith"
 	"visual-studio-code-bin"
-    "albert"
 )
 j=0
 total=${#yay_packages[@]}
-
 while [ $j -lt $total ]; do
   pkg=${yay_packages[$j]}
   yay -S --needed --noconfirm "$pkg" >/dev/null 2>&1
@@ -134,13 +132,6 @@ echo "All flatpak packages installed successfully!"
 
 
 
-# Audio Server Setup (Pipewire)
-systemctl --user enable pipewire pipewire-pulse wireplumber
-check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
-
-# LY Setup
-sudo systemctl enable ly
-check_status "Failed to enable ly"
 
 # Rust Setup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -161,42 +152,9 @@ echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.z
 echo "alias ls='exa --icons'">>~/.zshrc
 echo "alias la='ls -la'">>~/.zshrc
 echo "alias lh='ls -lh'">>~/.zshrc
+echo "alias i='sudo pacman -S'">>~./zshrc
 echo 'bindkey "^[[1;5D" backward-word      # Ctrl+Left'>>~/.zshrc
 echo 'bindkey "^[[1;5C" forward-word       # Ctrl+Right'>>~/.zshrc
 echo 'bindkey "^[[3~" delete-char          # Delete'>>~/.zshrc
 echo 'bindkey "^H" backward-kill-word      # Ctrl+Backspace'>>~/.zshrc
-
-# Dark Theme Setup
-mkdir -p ~/.config/gtk-3.0
-cat > ~/.config/gtk-3.0/settings.ini <<EOF
-[Settings]
-gtk-theme-name=Materia-dark
-gtk-icon-theme=Papirus-Dark
-gtk-application-prefer-dark-theme=true
-EOF
-
-mkdir -p ~/.config/gtk-4.0
-cat > ~/.config/gtk-4.0/settings.ini <<EOF
-[Settings]
-gtk-theme-name=Materia-dark
-gtk-icon-theme=Papirus-Dark
-gtk-application-prefer-dark-theme=true
-EOF
-
-# Thunar Setup (xdg-open)
-mkdir -p ~/.local/share/applications
-cat > ~/.local/share/applications/Thunar.desktop <<EOF
-[Desktop Entry]
-Name=Thunar
-Exec=thunar %f
-Icon=system-file-manager
-Terminal=false
-Type=Application
-Categories=Utility;Core;GTK;
-MimeType=inode/directory;
-EOF
-update-desktop-database ~/.local/share/applications
-
-# Albert Setup
-echo 'albert &' >> ~/.xinitrc
 

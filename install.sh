@@ -106,30 +106,6 @@ check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
 sudo systemctl enable ly
 check_status "Failed to enable ly"
 
-# Rust Setup
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
-
-# LazyVim Setup
-git clone https://github.com/LazyVim/starter ~/.config/nvim 
-rm -rf ~/.config/nvim/.git
-
-# Kitty Setup
-chsh -s /usr/bin/zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
-echo 'source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme'>>~/.zshrc
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.config/zsh/plugins/syntax-highlighting 
-echo 'source ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh'>>~/.zshrc
-echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh'>>~/.zshrc
-echo "alias ls='exa --icons'">>~/.zshrc
-echo "alias la='ls -la'">>~/.zshrc
-echo "alias lh='ls -lh'">>~/.zshrc
-echo 'bindkey "^[[1;5D" backward-word      # Ctrl+Left'>>~/.zshrc
-echo 'bindkey "^[[1;5C" forward-word       # Ctrl+Right'>>~/.zshrc
-echo 'bindkey "^[[3~" delete-char          # Delete'>>~/.zshrc
-echo 'bindkey "^H" backward-kill-word      # Ctrl+Backspace'>>~/.zshrc
-
 # Dark Theme Setup
 mkdir -p ~/.config/gtk-3.0
 cat > ~/.config/gtk-3.0/settings.ini <<EOF
@@ -160,9 +136,6 @@ Categories=Utility;Core;GTK;
 MimeType=inode/directory;
 EOF
 update-desktop-database ~/.local/share/applications
-
-# Albert Setup
-echo 'albert &' >> ~/.xinitrc
 
 # DWM Setup
 cd suckless
