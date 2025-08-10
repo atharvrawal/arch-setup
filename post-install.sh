@@ -23,34 +23,44 @@ echo "Successfully Updated & Upgraded"
 echo ""
 
 
+#!/bin/bash
+
+echo "========================================"
+echo "Setup is Starting..."
+echo "========================================"
+
+
+# Function to check the exit status of the last command
+check_status(){
+	if [ $? -ne 0 ]; then
+		echo "Error: $1"
+		exit 1
+	fi
+}
+
+# System Update & Upgrade
+echo "Updating & Upgrading Arch..."
+sudo pacman -Syy --noconfirm >/dev/null
+check_status "Failed to update the package database."
+sudo pacman -Syu --noconfirm >/dev/null
+check_status "Failed to upgrade the package database."
+echo "Successfully Updated & Upgraded"
+echo ""
+
+
 echo "Installing pacman packages..."
 pacman_packages=(
-	curl
-	git
-	nvim
-	tree
-	nmap
-	wget
-	base-devel
-	cmake
- 	pipewire 
-  	pipewire-audio 
-  	pipewire-alsa 
-  	pipewire-pulse 
-  	pipewire-jack
-  	wireplumber
-	xorg-server
-	xorg-xinit
-	xorg-xrandr
-	libx11
-	libxinerama
-	libxft
-	webkit2gtk
-	kitty
-	zsh
-	ly
+	firefox
+    flatpak
+    obs-studio
+	bat
 	exa
+	thunar 
+	gvfs 
+	gvfs-mtp 
+	gvfs-smb
 )
+
 i=0
 total=${#pacman_packages[@]}
 while [ $i -lt $total ]; do
@@ -77,13 +87,18 @@ sudo rm -rf yay >/dev/null
 check_status "Failed to remove the yay package"
 echo "Above Version is yay version and is Successfully Installed"
 echo ""
+
+
 yay_packages=(
-	"ttf-firacode-nerd"
-	"materia-gtk-theme"
-	"papirus-icon-theme"
+	"elecwhat-bin"
+	"brave-bin"
+	"bluetuith"
+	"visual-studio-code-bin"
+    "albert"
 )
 j=0
 total=${#yay_packages[@]}
+
 while [ $j -lt $total ]; do
   pkg=${yay_packages[$j]}
   yay -S --needed --noconfirm "$pkg" >/dev/null 2>&1
@@ -94,6 +109,27 @@ done
 echo "All yay packages installed succesfully"
 echo ""
 
+
+
+
+
+echo "Installing flatpacks..."
+flatpacks=(
+  "md.obsidian.Obsidian"
+  "com.discordapp.Discord"
+  "org.videolan.VLC"
+  "com.rafaelmardojai.Blanket"
+)
+k=0 
+total=${#flatpacks[@]}
+while [ $k -lt $total ]; do
+  pkg=${flatpacks[$k]}
+  flatpak install -y --noninteractive flathub "$pkg" >/dev/null 2>&1
+  check_status "Failed to install $pkg"
+  echo "✅ $pkg installed successfully"
+  ((k++))
+done
+echo "All flatpak packages installed successfully!"
 
 
 
@@ -163,15 +199,4 @@ update-desktop-database ~/.local/share/applications
 
 # Albert Setup
 echo 'albert &' >> ~/.xinitrc
-
-# DWM Setup
-cd suckless
-cd dmenu
-sudo make clean install
-cd .. 
-cd dwm
-sudo make clean install
-cd ../..
-echo "exec dwm" >> ~/.xinitrc
-chmod +x ~/.xinitrc
 
