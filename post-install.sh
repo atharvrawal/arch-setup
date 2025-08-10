@@ -133,7 +133,7 @@ echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.z
 echo "alias ls='exa --icons'">>~/.zshrc
 echo "alias la='ls -la'">>~/.zshrc
 echo "alias lh='ls -lh'">>~/.zshrc
-echo "alias i='sudo pacman -S'">>~./zshrc
+echo "alias i='sudo pacman -S'">>~/.zshrc
 echo 'bindkey "^[[1;5D" backward-word      # Ctrl+Left'>>~/.zshrc
 echo 'bindkey "^[[1;5C" forward-word       # Ctrl+Right'>>~/.zshrc
 echo 'bindkey "^[[3~" delete-char          # Delete'>>~/.zshrc
