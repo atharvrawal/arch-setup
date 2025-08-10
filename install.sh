@@ -50,6 +50,7 @@ pacman_packages=(
 	zsh
 	ly
 	exa
+	rofi
 )
 i=0
 total=${#pacman_packages[@]}
