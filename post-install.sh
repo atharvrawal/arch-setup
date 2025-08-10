@@ -23,31 +23,6 @@ echo "Successfully Updated & Upgraded"
 echo ""
 
 
-#!/bin/bash
-
-echo "========================================"
-echo "Setup is Starting..."
-echo "========================================"
-
-
-# Function to check the exit status of the last command
-check_status(){
-	if [ $? -ne 0 ]; then
-		echo "Error: $1"
-		exit 1
-	fi
-}
-
-# System Update & Upgrade
-echo "Updating & Upgrading Arch..."
-sudo pacman -Syy --noconfirm >/dev/null
-check_status "Failed to update the package database."
-sudo pacman -Syu --noconfirm >/dev/null
-check_status "Failed to upgrade the package database."
-echo "Successfully Updated & Upgraded"
-echo ""
-
-
 echo "Installing pacman packages..."
 pacman_packages=(
 	firefox
@@ -74,6 +49,9 @@ echo "All pacman packages installed successfully"
 echo ""
 
 
+
+
+
 if command -v yay >/dev/null 2>&1; then
     echo "Yay is already installed. Skipping installation."
     yay --version
@@ -92,7 +70,6 @@ else
   echo "Above Version is yay version and is Successfully Installed"
   echo ""
 fi
-
 yay_packages=(
 	"elecwhat-bin"
 	"brave-bin"
