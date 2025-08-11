@@ -6,12 +6,11 @@ echo "========================================"
 
 source ~/arch-setup/post-install/check-status.sh
 
-# # System Update & Upgrade
-# bash ./system-update-upgrade.sh
-# check_status "system-update-upgrade.sh Failed"
+# System Update & Upgrade
+bash ~/arch-setup/post-install/system-update-upgrade.sh
+check_status "system-update-upgrade.sh Failed"
 
 # Pacman Packages
-
 bash ~/arch-setup/post-install/pacman-packages.sh
 check_status "pacman-packages.sh Failed"
 
