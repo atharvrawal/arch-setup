@@ -5,14 +5,16 @@ source ~/arch-setup/post-install/check-status.sh
 echo "Installing pacman packages..."
 pacman_packages=(
 	firefox
-    flatpak
-    obs-studio
+  flatpak
+  obs-studio
 	bat
 	exa
 	thunar 
 	gvfs 
 	gvfs-mtp 
 	gvfs-smb
+  waybar
+  hyprpaper
 )
 i=0
 total=${#pacman_packages[@]}
