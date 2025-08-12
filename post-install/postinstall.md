@@ -34,12 +34,6 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 - Copy the whole above thing and simply paste in terminal 
 - This will make the D.N.S. `1.1.1.1, 8.8.8.8` for the currently active connection
 
-### Install Albert & Setup
-- `yay -S albert`
-- Set theme to "Yosemite Dark"
-- Check all boxes in the window pane
-- Check desired boxes in the plugins pane
-
 ## Dwm Patches used 
 - `useless gap`
 - `nextprev -> shiftview`

@@ -4,12 +4,12 @@ source ~/arch-setup/post-install/check-status.sh
 
 # Kitty Setup
 chsh -s /bin/zsh
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.config/zsh/powerlevel10k >/dev/null 2>&1
 check_status "Failed to clone powerlevel10k"
 echo 'source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme'>>~/.zshrc
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.config/zsh/plugins/autosuggestions >/dev/null 2>&1
 check_status "Failed to clone zsh-autosuggestions"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.config/zsh/plugins/syntax-highlighting 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ~/.config/zsh/plugins/syntax-highlighting >/dev/null 2>&1 
 check_status "Failed to clone zsh-syntax-highlighting"
 echo 'source ~/.config/zsh/plugins/autosuggestions/zsh-autosuggestions.zsh'>>~/.zshrc
 echo 'source ~/.config/zsh/plugins/syntax-highlighting/zsh-syntax-highlighting.zsh'>>~/.zshrc
