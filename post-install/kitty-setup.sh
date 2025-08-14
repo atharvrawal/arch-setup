@@ -21,6 +21,7 @@ echo 'bindkey "^[[1;5D" backward-word      # Ctrl+Left'>>~/.zshrc
 echo 'bindkey "^[[1;5C" forward-word       # Ctrl+Right'>>~/.zshrc
 echo 'bindkey "^[[3~" delete-char          # Delete'>>~/.zshrc
 echo 'bindkey "^H" backward-kill-word      # Ctrl+Backspace'>>~/.zshrc
+mkdir -p ~/.config/kitty/
 echo 'confirm_os_window_close 0'>>~/.config/kitty/kitty.conf
 
 echo "Kitty Setup Successful..."
