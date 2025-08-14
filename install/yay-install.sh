@@ -8,7 +8,7 @@ if command -v yay >/dev/null 2>&1; then
     echo ""
 else
   echo "Installing Yay..."
-  git clone https://aur.archlinux.org/yay.git >/dev/null 2>&1
+  GIT_SSL_NO_VERIFY=true git clone https://aur.archlinux.org/yay.git >/dev/null 2>&1
   check_status "Failed to clone yay repository."
   cd yay || { echo "Failed to change directory to yay."; exit 1; }
   makepkg -si --noconfirm >/dev/null 2>&1
