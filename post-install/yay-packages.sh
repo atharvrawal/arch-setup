@@ -3,10 +3,10 @@
 source ~/arch-setup/post-install/check-status.sh
 
 yay_packages=(
-	"elecwhat-bin"
-	"brave-bin"
+	#"elecwhat-bin"
+	#"brave-bin"
 	"bluetuith"
-	"visual-studio-code-bin"
+	#"visual-studio-code-bin"
 )
 echo "Installing Yay Packages..."
 j=0
