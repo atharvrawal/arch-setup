@@ -15,6 +15,12 @@ pacman_packages=(
 	gvfs-smb
   waybar
   hyprpaper
+  pavucontrol
+  btop
+  wiremix
+  bluez
+  bluez-utils
+  bluez-obex
 )
 i=0
 total=${#pacman_packages[@]}
