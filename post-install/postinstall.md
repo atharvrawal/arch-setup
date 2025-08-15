@@ -37,3 +37,8 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 ## Dwm Patches used 
 - `useless gap`
 - `nextprev -> shiftview`
+
+## Touchpad enable 
+- `xinput list` to list all available devices
+- `xinput list-props <deviceID>` to list all available options
+- `xinput set-prop <deviceID> "libinput Tapping Enabled" 1
