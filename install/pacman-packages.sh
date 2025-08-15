@@ -3,56 +3,6 @@
 source ~/arch-setup/install/check-status.sh
 
 echo "Installing pacman packages..."
-pacman_packages=(
-	curl
-	git
-	nvim
-	tree
-	nmap
-	wget
-	base-devel
-	cmake
-
- 	pipewire 
-  	pipewire-audio 
-  	pipewire-alsa 
-  	pipewire-pulse 
-  	pipewire-jack
-  	wireplumber
-	wiremix
-	pavucontrol
-
-	thunar 
-	gvfs 
-	gvfs-mtp 
-	gvfs-smb
-
-	xorg-server
-	xorg-xinit
-	xorg-xrandr
-	libx11
-	libxinerama
-	libxft
-	webkit2gtk
-
-	kitty
-	zsh
-	ly
-	exa
-	rofi
-	btop
-	exa
-
-	bluez
-    bluez-utils
-    bluez-obex
-
-	hyprpaper
-	waybar
-
-	flatpak
-	firefox
-)
 i=0
 total=${#pacman_packages[@]}
 while [ $i -lt $total ]; do

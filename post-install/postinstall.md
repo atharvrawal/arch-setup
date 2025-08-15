@@ -42,3 +42,6 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 - `xinput list` to list all available devices
 - `xinput list-props <deviceID>` to list all available options
 - `xinput set-prop <deviceID> "libinput Tapping Enabled" 1
+
+## VS Code Setup
+- Editor: Font Family : `FiraCode Nerd Font`

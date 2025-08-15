@@ -100,7 +100,8 @@
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "kitty -e sh -c 'exec bluetuith'"
+    "on-click": "kitty -e sh -c 'exec bluetuith'",
+    "on-click-right": "pavucontrol"
   },
   "pulseaudio": {
     "format": "{icon}",
