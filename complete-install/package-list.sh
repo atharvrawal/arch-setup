@@ -57,15 +57,15 @@ yay_packages=(
 	"ttf-firacode-nerd"
 	"materia-gtk-theme"
 	"papirus-icon-theme"
-	#"elecwhat-bin"
-	#"brave-bin"
+	"elecwhat-bin"
+	"brave-bin"
 	"bluetuith"
-	#"visual-studio-code-bin"
+	"visual-studio-code-bin"
 )
 
 flatpacks=(
-  #"md.obsidian.Obsidian"
-  #"com.discordapp.Discord"
+  "md.obsidian.Obsidian"
+  "com.discordapp.Discord"
   "org.videolan.VLC"
-  #"com.rafaelmardojai.Blanket"
+  "com.rafaelmardojai.Blanket"
 )
