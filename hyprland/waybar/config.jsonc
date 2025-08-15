@@ -101,12 +101,11 @@
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
     "on-click": "kitty -e sh -c 'exec bluetuith'",
-    "on-click-right": "pavucontrol"
   },
   "pulseaudio": {
     "format": "{icon}",
     "on-click": "kitty -e wiremix",
-    "on-click-right": "pamixer -t",
+    "on-click-right": "pavucontrol",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "󰝟",

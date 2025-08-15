@@ -53,6 +53,7 @@ echo ""
 
 
 # Installing Flatpaks
+echo "Installing Flatpak Packages..."
 k=0 
 total=${#flatpacks[@]}
 while [ $k -lt $total ]; do
@@ -64,6 +65,23 @@ while [ $k -lt $total ]; do
 done
 echo "All flatpak packages installed successfully!"
 echo ""
+
+
+# Audio Server Setup (Pipewire)
+systemctl --user enable pipewire pipewire-pulse wireplumber
+check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
+
+
+
+# Bluetooth Server Setup (Bluez)
+sudo systemctl enable --now bluetooth
+check_status "Failed to enable Bluez daemon"
+
+
+
+# LY Setup
+sudo systemctl enable ly
+check_status "Failed to enable ly"
 
 
 
