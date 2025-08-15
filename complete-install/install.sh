@@ -36,6 +36,11 @@ echo ""
 
 
 
+# Installing Yay
+bash ~/arch-setup/complete-install/yay-install.sh
+
+
+
 # Installing Yay Packages
 echo "Installing Yay Packages..."
 j=0
