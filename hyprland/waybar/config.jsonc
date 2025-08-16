@@ -14,7 +14,7 @@
     "custom/update"
   ],
   "modules-right": [
-    "group/tray-expander",
+    "tray",
     "bluetooth",
     "network",
     "pulseaudio",
@@ -71,7 +71,8 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "nospacing": 1,
-    "on-click": "nm-connection-editor"
+    "on-click": "nm-connection-editor",
+    "on-click-right": "kitty -e nmtui"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -98,9 +99,9 @@
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
-    "format-connected": "",
+    "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "kitty -e sh -c 'exec bluetuith'",
+    "on-click": "kitty -e sh -c 'exec bluetuith'"
   },
   "pulseaudio": {
     "format": "{icon}",
@@ -112,21 +113,6 @@
     "format-icons": {
       "default": ["", "", ""]
     }
-  },
-  "group/tray-expander": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 600,
-      "children-class": "tray-group-item"
-    },
-    "modules": [
-      "custom/expand-icon",
-    "tray"
-    ]
-  },
-  "custom/expand-icon": {
-    "format": " ",
-    "tooltip": false
   },
   "tray": {
     "icon-size": 12,

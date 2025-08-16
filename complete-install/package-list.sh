@@ -9,6 +9,8 @@ pacman_packages=(
 	wget
 	base-devel
 	cmake
+	net-tools
+	network-manager-applet
 
  	pipewire 
   	pipewire-audio 
@@ -39,6 +41,7 @@ pacman_packages=(
 	rofi
 	btop
 	exa
+	deluge-gtk
 
 	bluez
     bluez-utils
@@ -47,7 +50,15 @@ pacman_packages=(
 	hyprpaper
 	waybar
 	wofi
-	network-manager-applet
+	ntfs-3g
+	brightnessctl
+	
+	nvidia-dkms
+	nvidia-utils
+	nvidia-prime
+	libva
+	libva-nvidia-driver
+	mesa
 
 	flatpak
 	firefox

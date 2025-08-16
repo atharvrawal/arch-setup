@@ -8,7 +8,7 @@
 	- dump : 0 or 1 i.e. disable or enable backup dump utility {keep 0, no one cares}
 	- file system check : 0 or 1 i.e. disables or enables fsck {keep 0, no one cares} 
 	- Hence, final line :
-		- `UUID=EAAE69DBAE69A0B5    /mnt/Windows    ntfs-3g    defaults    0    0`
+		- `UUID=EAAE69DBAE69A0B5    /mnt/Windows    ntfs    defaults    0    0`
 - To and a symbolic link to the home dir
 	- `mkdir Windows`
 	- `ln -s /mnt/Windows/Users/Atharv /home/atharv/Windows` 
@@ -19,12 +19,6 @@
 	├── Atharv -> /mnt/windows/Users/Atharv
 	└── windows -> /mnt/windows
 	```
-
-### Slow Shutdown Time Solve
-- `sudo nvim /etc/systemd/system.conf`
-- un-comment the line `DefaultTimeoutStopSec=90s`
-- Then make the default timeout `10s`
-- After 2 restarts it should work normally
 
 ### Change Default D.N.S.
 ```bash
@@ -45,3 +39,16 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 
 ## VS Code Setup
 - Editor: Font Family : `FiraCode Nerd Font`
+
+## Albert
+- Go to the main albert page
+- Getting Started->Install->Linux
+- Visit OBS software center 
+- Add the repo and install or just get binary (your call)
+- Binary Installation
+	- `sudo pacman -U albert-x.xx.x-0x86_64.pkg.tar.zst` 
+	- Done, but no updates 
+
+## Monitor
+- Read the hyprland nvidia page if the below doesnt work
+- 

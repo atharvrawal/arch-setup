@@ -83,7 +83,7 @@ pacman_packages=(
 	nvidia-utils
  	nvidia-prime
 	mesa
-  	deluge-gtk
+  deluge-gtk
 )
 
 i=0
