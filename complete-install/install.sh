@@ -1,12 +1,6 @@
 #!/bin/bash
 
-check_status(){
-	if [ $? -ne 0 ]; then
-		echo "Error: $1"
-		exit 1
-	fi
-}
-
+source ~/arch-setup/complete-install/check-status.sh
 source ~/arch-setup/complete-install/package-list.sh
 
 echo "========================================"

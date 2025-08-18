@@ -1,4 +1,5 @@
-# Function to check the exit status of the last command
+#!/bin/bash
+
 check_status(){
 	if [ $? -ne 0 ]; then
 		echo "Error: $1"

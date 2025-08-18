@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/arch-setup/install/check-status.sh
+source ~/arch-setup/complete-install/check-status.sh
 
 if command -v yay >/dev/null 2>&1; then
     echo "Yay is already installed. Skipping installation."

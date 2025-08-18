@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/arch-setup/post-install/check-status.sh
+source ~/arch-setup/complete-install/check-status.sh
 
 # Kitty Setup
 cd ~

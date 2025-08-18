@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/arch-setup/install/check-status.sh
+source ~/arch-setup/complete-install/check-status.sh
 
 echo "Installing Hyprland..."
 yay -S --needed --noconfirm hyprland >/dev/null 2>&1

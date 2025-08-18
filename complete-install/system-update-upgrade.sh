@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/arch-setup/install/check-status.sh
+source ~/arch-setup/complete-install/check-status.sh
 
 echo "Updating & Upgrading Arch..."
 sudo pacman -Syy --noconfirm >/dev/null
