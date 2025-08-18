@@ -51,4 +51,20 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 
 ## Monitor
 - Read the hyprland nvidia page if the below doesnt work
-- 
+- All necessary packages are already installed via the install script
+- Create & edit `/etc/modprobe.d/nvidia.conf`
+	- Add the line: `options nvidia_drm modeset=1`
+- Edit `/etc/mkinitcpio.conf`
+	- In the MODULES=() array, add the following module names
+	- `MODULES=(i915 nvidia nvidia_modeset nvidia_uvm nvidia_drm)`
+- Then run `sudo mkinitcpio -P` to rebuild the kernel with these parameters
+- Run the below lines to add them to evn
+	- `env = LIBVA_DRIVER_NAME,nvidia`
+	- `env = __GLX_VENDOR_LIBRARY_NAME,nvidia`
+- Reboot
+
+## Installing qemu
+
+
+## Windows iso creation with XML
+
