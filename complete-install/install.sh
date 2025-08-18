@@ -66,21 +66,8 @@ echo "All flatpak packages installed successfully!"
 echo ""
 
 
-# Audio Server Setup (Pipewire)
-systemctl --user enable pipewire pipewire-pulse wireplumber
-check_status "Failed to enable pipewire or pipewire-pulse or wireplumber"
-
-
-
-# Bluetooth Server Setup (Bluez)
-sudo systemctl enable --now bluetooth
-check_status "Failed to enable Bluez daemon"
-
-
-
-# LY Setup
-sudo systemctl enable ly
-check_status "Failed to enable ly"
+# Service Setup
+bash ~/arch-setup/complete-install/service-setup.sh
 
 
 
