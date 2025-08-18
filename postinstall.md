@@ -68,3 +68,8 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 
 ## Windows iso creation with XML
 
+
+## Monitor Setup
+- Making a virtual monitor
+	- `hyprctl output create headless ghost`
+	- set monitor specifications in `hyprland.conf`
