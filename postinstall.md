@@ -43,11 +43,10 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 ## Albert
 - Go to the main albert page
 - Getting Started->Install->Linux
-- Visit OBS software center 
-- Add the repo and install or just get binary (your call)
 - Binary Installation
 	- `sudo pacman -U albert-x.xx.x-0x86_64.pkg.tar.zst` 
 	- Done, but no updates 
+- Adding package doesnt work, build fails
 
 ## Monitor
 - Read the hyprland nvidia page if the below doesnt work
@@ -73,3 +72,9 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 - Making a virtual monitor
 	- `hyprctl output create headless ghost`
 	- set monitor specifications in `hyprland.conf`
+
+## Pinning in Thunar (Bookmarks)
+- Go inside which ever folder u want to pin and 
+- `ctrl + d` 
+- This creates a shortcut to that folder which can be renamed to whatever
+- And it doesnt change the name of the actual folder
