@@ -60,6 +60,16 @@ pacman_packages=(
 	libva-nvidia-driver
 	mesa
 
+	qemu-full
+	virt-manager
+	virt-viewer
+	dnsmasq
+	vde2
+	bridge-utils
+	openbsd-netcat
+	usbutils
+
+
 	flatpak
 	firefox
 )

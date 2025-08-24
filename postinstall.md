@@ -48,7 +48,7 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 	- Done, but no updates 
 - Adding package doesnt work, build fails
 
-## Monitor
+## Nvidia Setup (for second monitor)
 - Read the hyprland nvidia page if the below doesnt work
 - All necessary packages are already installed via the install script
 - Create & edit `/etc/modprobe.d/nvidia.conf`
@@ -62,7 +62,31 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 	- `env = __GLX_VENDOR_LIBRARY_NAME,nvidia`
 - Reboot
 
-## Installing qemu
+## QEMU Setup
+- Making Virtual Disk : `qemu-img create -f qcow2 /path/to/distro.qcow2 50G`
+- Installing VM's :
+	```bash
+	virt-install \
+	--name Arch \
+	--memory 8192 \ 
+	--vcpus 8 \
+	--cpu host-passthrough, cache.mode=passthrough \
+	--machine q35 
+	--disk path=/home/atharv/arch.qcow2,format=qcow2,bus=virtio,cache=none,discard=unmap,io=native \
+	--cdrom /home/atharv/archlinux-2025.08.01-x86_64.iso \
+	--network network=default,model=virtio \
+	--graphics spice \
+	--video virtio \ 
+	--channel spicevmc \
+	--boot uefi \
+	--features kvm_hidden=on 
+	```
+- List all VMs : `virsh list --all`
+- Running VM : `virsh start <name> & virt-viewer <name> & disown`
+- Shutting Down VM : `sudo virsh destroy <name>`
+- Editing VM configs : `virsh edit <name>`
+- Removing VM : `sudo virsh undefine <name> --nvram & sudo rm /path/to/<name>.qcow2` 
+
 
 
 ## Windows iso creation with XML
