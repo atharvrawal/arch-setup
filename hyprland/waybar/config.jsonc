@@ -6,17 +6,14 @@
   "spacing": 0,
   "height": 26,
   "modules-left": [
-    "custom/omarchy",
     "hyprland/workspaces"
   ],
   "modules-center": [
-    "clock",
-    "custom/update"
+    "clock"
   ],
   "modules-right": [
     "tray",
     "bluetooth",
-    "network",
     "pulseaudio",
     "cpu",
     "battery"
@@ -60,20 +57,6 @@
     "tooltip": false,
     "on-click-right": "gsimplecal"
   },
-  "network": {
-    "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-    "format" : "{icon}",
-    "format-wifi" : "{icon}",
-    "format-ethernet" : "󰀂",
-    "format-disconnected" : "󰖪",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-ethernet": "⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 3,
-    "nospacing": 1,
-    "on-click": "nm-connection-editor",
-    "on-click-right": "kitty -e nmtui"
-  },
   "battery": {
     "format": "{capacity}% {icon}",
     "format-discharging": "{icon}",
@@ -116,6 +99,6 @@
   },
   "tray": {
     "icon-size": 12,
-    "spacing": 12
+    "spacing": 16
   }
 }

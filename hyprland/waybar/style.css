@@ -17,7 +17,6 @@ window#waybar {
 }
 
 .modules-right {
-  background-color: black;
   margin-right: 8px;
 }
 
@@ -35,19 +34,19 @@ window#waybar {
 
 #cpu,
 #battery,
-#network,
 #bluetooth,
-#pulseaudio,
-#clock,
-#custom-omarchy {
-  min-width: 12px;
-  margin: 0 7.5px;
+#pulseaudio {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-#custom-expand-icon {
-  margin-right: 7px;
+#tray{
+  padding: 0 8px;
 }
+
+
 
 tooltip {
   padding: 2px;
 }
+
