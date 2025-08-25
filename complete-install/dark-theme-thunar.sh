@@ -31,5 +31,5 @@ MimeType=inode/directory;
 EOF
 update-desktop-database ~/.local/share/applications
 
-echo "Dark Theme & Thunar Setup Successfull..."
+echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""

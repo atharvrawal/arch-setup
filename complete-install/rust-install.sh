@@ -14,5 +14,5 @@ else
     echo 'source $HOME/.cargo/env' >> ~/.zshrc
     check_status "Failed to add Rust to PATH"
 
-    echo "Rust successfuly installed & added to PATH"
+    echo "✅ Rust successfuly installed & added to PATH"
 fi

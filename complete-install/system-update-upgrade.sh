@@ -7,5 +7,5 @@ sudo pacman -Syy --noconfirm >/dev/null
 check_status "Failed to update the package database."
 sudo pacman -Syu --noconfirm >/dev/null
 check_status "Failed to upgrade the package database."
-echo "Successfully Updated & Upgraded"
+echo "✅ Successfully Updated & Upgraded"
 echo ""

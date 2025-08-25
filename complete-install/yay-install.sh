@@ -3,7 +3,7 @@
 source ~/arch-setup/complete-install/check-status.sh
 
 if command -v yay >/dev/null 2>&1; then
-    echo "Yay is already installed. Skipping installation."
+    echo "✅ Yay is already installed. Skipping installation."
     yay --version
     echo ""
 else
@@ -17,6 +17,6 @@ else
   cd ..
   sudo rm -rf yay >/dev/null
   check_status "Failed to remove the yay package"
-  echo "Above Version is yay version and is Successfully Installed"
+  echo "✅ Above Version is yay version and is Successfully Installed"
   echo ""
 fi

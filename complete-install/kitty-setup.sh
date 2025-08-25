@@ -34,5 +34,5 @@ echo 'setopt hist_reduce_blanks' >>~/.zshrc
 mkdir -p ~/.config/kitty/
 echo 'confirm_os_window_close 0'>>~/.config/kitty/kitty.conf
 
-echo "Kitty Setup Successful..."
+echo "✅ Kitty Setup Successful..."
 echo ""

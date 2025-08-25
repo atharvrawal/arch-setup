@@ -95,7 +95,7 @@ sudo make clean install >/dev/null 2>&1
 check_status "Failed to install DWM"
 echo "exec dwm" >> ~/.xinitrc
 chmod +x ~/.xinitrc
-echo "DWM Setup Successful"
+echo "✅ DWM Setup Successful"
 
 
 
