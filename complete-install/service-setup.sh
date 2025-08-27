@@ -32,3 +32,16 @@ git config --global user.email "atharvrawal04@gmail.com"
 git config --gllbal user.name "Atharv"
 echo "✅ Git Email & Name setup Successful"
 echo ""
+
+
+
+# QEMU Setup
+sudo systemctl enable --now libvirtd
+sudo usermod -aG libvirt,kvm $USER
+sudo virsh net-start default
+sudo virsh net-autostart default
+echo 'export LIBVIRT_DEFAULT_URI="qemu:///system"' >> ~/.zshrc
+echo 'export EDITOR=nvim' >> ~/.zshrc
+source ~/.zshrc
+echo "✅ QEMU Setup Successful"
+echo ""
