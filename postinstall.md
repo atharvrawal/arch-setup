@@ -86,10 +86,39 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 - Shutting Down VM : `sudo virsh destroy <name>`
 - Editing VM configs : `virsh edit <name>`
 - Removing VM : `sudo virsh undefine <name> --nvram & sudo rm /path/to/<name>.qcow2` 
+- USB Passthrough:
+	- `lsusb` : `Bus 001 Device 005: ID 046d:c534 Logitech USB Receiver`
+	- There will be multiple devices, like this, the ID is whats important `046d:c534`
+	- Command to attach device
+		```bash
+		virsh attach-device Arch <(echo "
+		<hostdev mode='subsystem' type='usb' managed='yes'>
+		<source>
+			<vendor id='0x046d'/> # replace this with desired
+			<product id='0xc534'/> # usb vendor id and product id
+		</source>
+		</hostdev>
+		") --live
+		```
+	- Command to detach device (simple replace `attach-device` with `detach-device`)
+- Windows: Just use virtual machine manager, too much bt to do cli
 
+## Creating a Modified ISO
+- 7z x <iso_name>.iso -oisoroot
+- ISO is extracted in /isoroot, now do any modifications necessary (eg: add xml)
+- Then Run: to rebuild the iso with the modifications
+	```bash
+	xorriso -as mkisofs \
+	-iso-level 3 -full-iso9660-filenames \
+	-volid "<custom_iso_name_withou_file_extention>" \
+	-eltorito-boot boot/etfsboot.com \
+		-no-emul-boot -boot-load-size 8 -boot-info-table \
+	-eltorito-alt-boot \
+		-eltorito-boot efi/microsoft/boot/efisys.bin \
+		-no-emul-boot -isohybrid-gpt-basdat \
+	-o Win11_Unattended.iso isoroot
+	```
 
-
-## Windows iso creation with XML
 
 
 ## Monitor Setup
