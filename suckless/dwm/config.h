@@ -63,6 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL }; // Modified
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL }; // Modified
 static const char *filecmd[] = {"thunar", NULL}; // Modified
+static const char *scrshotcmd[] = {"flameshot", "gui", "-c", NULL}; //Modified
 
 
 static const Key keys[] = {
@@ -71,6 +72,7 @@ static const Key keys[] = {
 	{ ALTKEY,                       XK_Return, spawn,          {.v = termcmd } }, // Modified
 	{ MODKEY,                       XK_e,      spawn,          {.v = filecmd } }, // Modified
 	{ ALTKEY,                       XK_space,  spawn,          {.v = roficmd } }, // Modified
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = scrshotcmd } }, // Modified
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -101,7 +103,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} }, // Modified
+	{ MODKEY,                       XK_q,      quit,           {0} }, // Modified
 	{ ALTKEY,                       XK_l,      shiftview,      {.i = +1}}, // Modified
 	{ ALTKEY,                       XK_h,      shiftview,      {.i = -1}}, // Modified
 	{ ALTKEY|ShiftMask,             XK_l,      shiftwindow,    {.i = +1}}, // Modified
