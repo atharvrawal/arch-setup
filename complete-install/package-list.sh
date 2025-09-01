@@ -68,7 +68,9 @@ pacman_packages=(
 	bridge-utils
 	openbsd-netcat
 	usbutils
-
+	p7zip
+	libisoburn
+	
 
 	flatpak
 	firefox
@@ -82,6 +84,7 @@ yay_packages=(
 	"brave-bin"
 	"bluetuith"
 	"visual-studio-code-bin"
+	"powershell-bin"
 )
 
 flatpacks=(
