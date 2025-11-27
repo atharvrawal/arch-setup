@@ -7,12 +7,8 @@ echo "========================================"
 echo "Setup is Starting..."
 echo "========================================"
 
-
-
 # System Update & Upgrade
 bash ~/arch-setup/complete-install/system-update-upgrade.sh
-
-
 
 # Installing Pacman Packages
 echo "Installing pacman packages..."
@@ -28,12 +24,8 @@ done
 echo "All pacman packages installed successfully"
 echo ""
 
-
-
 # Installing Yay
 bash ~/arch-setup/complete-install/yay-install.sh
-
-
 
 # Installing Yay Packages
 echo "Installing Yay Packages..."
@@ -49,8 +41,6 @@ done
 echo "All yay packages installed succesfully"
 echo ""
 
-
-
 # Installing Flatpaks
 echo "Installing Flatpak Packages..."
 k=0 
@@ -65,42 +55,32 @@ done
 echo "All flatpak packages installed successfully!"
 echo ""
 
-
 # Service Setup
 bash ~/arch-setup/complete-install/service-setup.sh
 
+# Pipewire Setup
+bash ~/arch-setup/complete-install/pipewire-setup.sh
 
+# Bluetooth Setup
+bash ~/arch-setup/complete-install/bluetooth-setup.sh
 
 # Dark Theme Setup
 bash ~/arch-setup/complete-install/dark-theme-thunar.sh
 
-
-
 # Rust Install
 bash ~/arch-setup/complete-install/rust-install.sh
-
-
 
 # Kitty Setup
 bash ~/arch-setup/complete-install/kitty-setup.sh
 
-
-
 # DWM Setup
-cd ~/arch-setup/suckless/dmenu
-sudo make clean install >/dev/null 2>&1
-check_status "Failed to install DMENU"
-cd ~/arch-setup/suckless/dwm
-sudo make clean install >/dev/null 2>&1
-check_status "Failed to install DWM"
-echo "exec dwm" >> ~/.xinitrc
-chmod +x ~/.xinitrc
-echo "✅ DWM Setup Successful"
-
-
+bash ~/arch-setup/complete-install/dwm-setup.sh
 
 # Hyprland Setup
 bash ~/arch-setup/complete-install/hyprland-install.sh
+
+# QEMU Setup
+bash ~/arch-setup/complete-install/qemu-setup.sh
 
 
 

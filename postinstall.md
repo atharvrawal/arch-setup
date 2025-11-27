@@ -71,7 +71,7 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 	--memory 8192 \ 
 	--vcpus 8 \
 	--cpu host-passthrough, cache.mode=passthrough \
-	--machine q35 
+	--machine q35 \
 	--disk path=/home/atharv/arch.qcow2,format=qcow2,bus=virtio,cache=none,discard=unmap,io=native \
 	--cdrom /home/atharv/archlinux-2025.08.01-x86_64.iso \
 	--network network=default,model=virtio \

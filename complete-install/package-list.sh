@@ -12,15 +12,6 @@ pacman_packages=(
 	net-tools
 	network-manager-applet
 
- 	pipewire 
-  	pipewire-audio 
-  	pipewire-alsa 
-  	pipewire-pulse 
-  	pipewire-jack
-  	wireplumber
-	wiremix
-	pavucontrol
-
 	thunar 
 	gvfs 
 	gvfs-mtp 
@@ -43,10 +34,6 @@ pacman_packages=(
 	exa
 	deluge-gtk
 
-	bluez
-    bluez-utils
-    bluez-obex
-
 	hyprpaper
 	waybar
 	wofi
@@ -59,18 +46,6 @@ pacman_packages=(
 	libva
 	libva-nvidia-driver
 	mesa
-
-	qemu-full
-	virt-manager
-	virt-viewer
-	dnsmasq
-	vde2
-	bridge-utils
-	openbsd-netcat
-	usbutils
-	p7zip
-	libisoburn
-	
 
 	flatpak
 	firefox

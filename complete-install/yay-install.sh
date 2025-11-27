@@ -14,7 +14,7 @@ else
   makepkg -si --noconfirm >/dev/null 2>&1
   check_status "Failed to build and install yay."
   yay --version
-  cd ..
+  cd .. 
   sudo rm -rf yay >/dev/null
   check_status "Failed to remove the yay package"
   echo "✅ Above Version is yay version and is Successfully Installed"
