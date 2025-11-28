@@ -10,6 +10,6 @@ echo ""
 
 # Github Setup
 git config --global user.email "atharvrawal04@gmail.com"
-git config --gllbal user.name "Atharv"
+git config --global user.name "Atharv"
 echo "✅ Git Email & Name setup Successful"
 echo ""

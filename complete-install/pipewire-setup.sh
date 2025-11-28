@@ -2,7 +2,7 @@
 
 source ~/arch-setup/complete-install/check-status.sh
 
-sudo pacman -S --needed --noconfirm \
+sudo pacman -S --needed \
  	pipewire \
   	pipewire-audio \
     pipewire-alsa \
