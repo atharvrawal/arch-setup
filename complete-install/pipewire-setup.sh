@@ -10,7 +10,7 @@ sudo pacman -S --needed \
   	pipewire-jack \
   	wireplumber \
 	wiremix \
-	pavucontrol >/dev/null 2>&1
+	pavucontrol
 check_status "Failed to install Pipewire or its components"
 echo "✅ Pipewire and its components installed successfully"
 echo ""
