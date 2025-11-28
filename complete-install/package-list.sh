@@ -1,54 +1,18 @@
 #!/bin/bash
 
-pacman_packages=(
-	curl
-	git
-	nvim
-	tree
-	nmap
-	wget
-	base-devel
-	cmake
-	net-tools
-	network-manager-applet
+# ==== Package Groups ====
 
-	thunar 
-	gvfs 
-	gvfs-mtp 
-	gvfs-smb
+declare -A pacman_groups
 
-	xorg-server
-	xorg-xinit
-	xorg-xrandr
-	libx11
-	libxinerama
-	libxft
-	webkit2gtk
-
-	kitty
-	zsh
-	ly
-	exa
-	rofi
-	btop
-	exa
-	deluge-gtk
-
-	hyprpaper
-	waybar
-	wofi
-	ntfs-3g
-	brightnessctl
-	
-	nvidia-dkms
-	nvidia-utils
-	nvidia-prime
-	libva
-	libva-nvidia-driver
-	mesa
-
-	flatpak
-	firefox
+pacman_groups=(
+  [base]="curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet"
+  [fileman]="thunar gvfs gvfs-mtp gvfs-smb"
+  [xorg]="xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk"
+  [apps]="kitty zsh ly exa rofi btop deluge-gtk"
+  [wayland]="hyprpaper waybar wofi brightnessctl"
+  [storage]="ntfs-3g"
+  [nvidia]="nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa"
+  [flatpak_tools]="flatpak firefox"
 )
 
 yay_packages=(
