@@ -15,6 +15,8 @@ declare -A pacman_groups=(
   [flatpak_tools]="flatpak firefox"
 )
 
+pacman_group_order=(base fileman pipewire bluetooth xorg apps hyprland storage nvidia flatpak_tools)
+
 
 yay_packages=(
 	"ttf-firacode-nerd"

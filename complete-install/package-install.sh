@@ -3,15 +3,15 @@ source ~/arch-setup/complete-install/check-status.sh
 source ~/arch-setup/complete-install/package-list.sh
 
 echo "Installing pacman packages..."
-for group in "${!pacman_groups[@]}"; do
+for key in "${!pacman_group_order[@]}"; do
     echo ""
-    echo "=== Package group: $group ==="
-    echo "${pacman_groups[$group]}"
+    echo "=== Package group: $key ==="
+    echo "${pacman_groups[$key]}"
     
-    read -p "Do you want to install the '$group' package group? (y/n): " choice
+    read -p "Do you want to install the '$key' package group? (y/n): " choice
     if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
-        echo "➡ Installing group: $group"
-        for pkg in ${pacman_groups[$group]}; do
+        echo "➡ Installing group: $key"
+        for pkg in ${pacman_groups[$key]}; do
             sudo pacman -S --needed --noconfirm "$pkg" >/dev/null 2>&1
             check_status "Failed to install $pkg"
             echo "  ✔ $pkg installed"
