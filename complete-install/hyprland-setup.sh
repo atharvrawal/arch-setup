@@ -1,13 +1,7 @@
 #!/bin/bash
-read -p "Do you want to install Hyprland? (y/n): " choice
+read -p "Do you want to use my Hyprland conf ? (y/n): " choice
 if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
     source ~/arch-setup/complete-install/check-status.sh
-
-    echo "Installing Hyprland..."
-    yay -S --needed --noconfirm hyprland >/dev/null 2>&1
-    check_status "Failed to install hyprland"
-    echo "Hyprland Successfuly Installed"
-
     # Symlinks
     # hyprland.conf 
     sudo rm -rf ~/.config/hypr

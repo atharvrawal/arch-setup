@@ -16,12 +16,6 @@ bash ~/arch-setup/complete-install/package-install.sh
 # Service Setup
 bash ~/arch-setup/complete-install/service-setup.sh
 
-# Pipewire Setup
-bash ~/arch-setup/complete-install/pipewire-setup.sh
-
-# Bluetooth Setup
-bash ~/arch-setup/complete-install/bluetooth-setup.sh
-
 # Dark Theme Setup
 bash ~/arch-setup/complete-install/dark-theme-thunar.sh
 
@@ -35,7 +29,7 @@ bash ~/arch-setup/complete-install/kitty-setup.sh
 bash ~/arch-setup/complete-install/dwm-setup.sh
 
 # Hyprland Setup
-bash ~/arch-setup/complete-install/hyprland-install.sh
+bash ~/arch-setup/complete-install/hyprland-setup.sh
 
 # QEMU Setup
 bash ~/arch-setup/complete-install/qemu-setup.sh
