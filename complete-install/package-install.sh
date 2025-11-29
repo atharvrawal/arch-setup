@@ -3,7 +3,7 @@ source ~/arch-setup/complete-install/check-status.sh
 source ~/arch-setup/complete-install/package-list.sh
 
 echo "Installing pacman packages..."
-for key in "${!pacman_group_order[@]}"; do
+for key in "${pacman_group_order[@]}"; do
     echo ""
     echo "=== Package group: $key ==="
     echo "${pacman_groups[$key]}"
