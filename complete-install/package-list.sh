@@ -2,7 +2,7 @@
 
 # ==== Package Groups ====
 
-declare -A pacman_groupsr=(
+declare -A pacman_groups=(
   [base]="curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet"
   [fileman]="thunar gvfs gvfs-mtp gvfs-smb"
   [pipewire]="pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol"
@@ -14,7 +14,6 @@ declare -A pacman_groupsr=(
   [nvidia]="nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa"
   [flatpak_tools]="flatpak firefox"
 )
-pacman_order=( base fileman pipewire bluetooth xorg apps hyprland storage nvidia flatpak_tools )
 
 yay_packages=(
 	"ttf-firacode-nerd"

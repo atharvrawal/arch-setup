@@ -6,12 +6,12 @@ echo "Installing pacman packages..."
 for group in "${!pacman_order[@]}"; do
     echo ""
     echo "=== Package group: $group ==="
-    echo "${pacman_order[$group]}"
+    echo "${pacman_groups[$group]}"
     
     read -p "Do you want to install the '$group' package group? (y/n): " choice
     if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
         echo "➡ Installing group: $group"
-        for pkg in ${pacman_order[$group]}; do
+        for pkg in ${pacman_groups[$group]}; do
             sudo pacman -S --needed --noconfirm "$pkg" >/dev/null 2>&1
             check_status "Failed to install $pkg"
             echo "  ✔ $pkg installed"
