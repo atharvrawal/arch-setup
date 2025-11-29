@@ -2,21 +2,19 @@
 
 # ==== Package Groups ====
 
-group_names=(base fileman pipewire bluetooth xorg apps hyprland storage nvidia flatpak_tools)
-
-# parallel array of package lists (same order)
-group_pkgs=(
-  "curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet"
-  "thunar gvfs gvfs-mtp gvfs-smb"
-  "pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol"
-  "bluez bluez-utils bluez-obex"
-  "xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk"
-  "kitty zsh ly exa rofi btop deluge-gtk"
-  "hyprland hyprpaper waybar wofi brightnessctl"
-  "ntfs-3g"
-  "nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa"
-  "flatpak firefox"
+declare -A pacman_groups=(
+  [base]="curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet"
+  [fileman]="thunar gvfs gvfs-mtp gvfs-smb"
+  [pipewire]="pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol"
+  [bluetooth]="bluez bluez-utils bluez-obex"
+  [xorg]="xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk"
+  [apps]="kitty zsh ly exa rofi btop deluge-gtk"
+  [hyprland]="hyprland hyprpaper waybar wofi brightnessctl"
+  [storage]="ntfs-3g"
+  [nvidia]="nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa"
+  [flatpak_tools]="flatpak firefox"
 )
+
 
 yay_packages=(
 	"ttf-firacode-nerd"
