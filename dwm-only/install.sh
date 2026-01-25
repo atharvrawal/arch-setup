@@ -49,7 +49,7 @@ makepkg -si
 paru --version
 cd .. 
 sudo rm -rf paru >/dev/null
-echo "✅ Above Version is yay version and is Successfully Installed"
+echo "✅ Above Version is paru version and is Successfully Installed"
 echo ""
 
 
