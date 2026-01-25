@@ -10,7 +10,7 @@ echo ""
 
 
 # ---------- Pacman Packages Install ----------
-sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet \
+sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet fastfetch \
                 thunar gvfs gvfs-mtp gvfs-smb \
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol \
                 bluez bluez-utils bluez-obex \
