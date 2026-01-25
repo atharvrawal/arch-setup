@@ -3,9 +3,7 @@
 # ---------- System Upgrade ----------
 echo "Updating & Upgrading Arch..."
 sudo pacman -Syy --noconfirm >/dev/null
-check_status "Failed to update the package database."
 sudo pacman -Syu --noconfirm >/dev/null
-check_status "Failed to upgrade the package database."
 echo "✅ Successfully Updated & Upgraded"
 echo ""
 
@@ -17,9 +15,9 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol \
                 bluez bluez-utils bluez-obex \
                 xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk \
-                kitty zsh ly exa rofi btop qbittorrent \
+                kitty fish eza rofi btop qbittorrent \
                 flatpak ntfs-3g \
-                nvidia nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \ 
+                nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \
                 --needed --noconfirm
 
 
@@ -80,6 +78,37 @@ sudo systemctl enable --now bluetooth
 check_status "Failed to enable Bluez daemon"
 echo "✅ Bluetooth Setup Successful"
 echo ""
+
+# Fish Setup
+sudo chsh -s /usr/bin/fish
+sudo rm ~/.config/fish/config.fish
+cat << 'EOF' >> ~/.config/fish/config.fish
+set -g fish_greeting ""
+alias ls='exa --icons'
+
+# Only run in interactive shells
+if status is-interactive
+	fastfetch
+end
+
+set -U fish_prompt_pwd_dir_length 0
+
+function fish_prompt
+	echo ''
+	set_color blue
+	echo -n (prompt_pwd)
+
+	# Git status
+	if test -d .git
+		set_color green
+		echo -n ' on  ' (git branch --show-current)'*'
+	end
+	set_color magenta
+	echo ''
+	echo -n '❯ '
+	set_color normal
+end
+EOF
 
 
 
