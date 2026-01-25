@@ -57,8 +57,8 @@ echo ""
 
 
 # ---------- Paru Package Install ----------
-# paru -S visual-studio-code-bin materia-gtk-theme papirus-icon-theme \
-#         --needed --noconfirm
+paru -S visual-studio-code-bin materia-gtk-theme papirus-icon-theme firefox-developer-edition \
+        --needed --noconfirm
 
 
 
