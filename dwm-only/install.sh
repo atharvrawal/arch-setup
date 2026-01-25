@@ -80,7 +80,7 @@ echo "✅ Bluetooth Setup Successful"
 echo ""
 
 # Fish Setup
-sudo chsh -s /usr/bin/fish
+chsh -s /usr/bin/fish
 sudo rm ~/.config/fish/config.fish
 cat << 'EOF' >> ~/.config/fish/config.fish
 set -g fish_greeting ""
