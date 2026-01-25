@@ -10,7 +10,7 @@ declare -A pacman_groups=(
   [xorg]="xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk"
   [apps]="kitty zsh ly exa rofi btop deluge-gtk"
   [hyprland]="hyprland hyprpaper waybar wofi brightnessctl"
-  [storage]="ntfs-3g"
+  [storage]="ntfs-3g" 
   [nvidia]="nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa"
   [flatpak_tools]="flatpak firefox"
 )

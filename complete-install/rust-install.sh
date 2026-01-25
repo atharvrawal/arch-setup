@@ -1,7 +1,6 @@
 #!/bin/bash
 read -p "Do you want to install Rust? (y/n): " choice
 if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
-    source ~/arch-setup/complete-install/check-status.sh
 
     # Check if Rust is already installed
     if command -v rustc >/dev/null 2>&1; then
@@ -9,12 +8,9 @@ if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
     else
         # Rust Setup
         cd ~
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y  >/dev/null 2>&1
-        check_status "Failed to install Rust"
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
 
         echo 'source $HOME/.cargo/env' >> ~/.zshrc
-        check_status "Failed to add Rust to PATH"
-
         echo "✅ Rust successfuly installed & added to PATH"
     fi
 else
