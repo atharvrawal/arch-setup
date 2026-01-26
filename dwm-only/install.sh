@@ -81,7 +81,7 @@ echo ""
 
 # Fish Setup
 chsh -s /usr/bin/fish
-sudo rm ~/.config/fish/config.fish
+mkdir ~/.config/fish
 cat << 'EOF' >> ~/.config/fish/config.fish
 set -g fish_greeting ""
 alias ls='exa --icons'
