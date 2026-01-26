@@ -84,8 +84,8 @@ chsh -s /usr/bin/fish
 mkdir ~/.config/fish
 cat << 'EOF' >> ~/.config/fish/config.fish
 set -g fish_greeting ""
-alias ls='exa --icons'
-
+alias ls='eza --icons'
+alias la='eza -la --icons'
 # Only run in interactive shells
 if status is-interactive
 	fastfetch
