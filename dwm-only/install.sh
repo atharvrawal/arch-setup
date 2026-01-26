@@ -157,5 +157,6 @@ sudo make clean install >/dev/null 2>&1
 cd ~/arch-setup/suckless/dwm
 sudo make clean install >/dev/null 2>&1
 echo "exec /usr/local/bin/dwm" >> ~/.xinitrc
+echo "flameshot &" >> ~/.xinitrc
 chmod +x ~/.xinitrc
 echo "✅ DWM Setup Successful"
