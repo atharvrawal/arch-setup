@@ -63,7 +63,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "kitty", NULL }; // Modified
 static const char *roficmd[]  = { "rofi", "-show", "drun", NULL }; // Modified
 static const char *filecmd[] = {"thunar", NULL}; // Modified
-static const char *scrshotcmd[] = {"flameshot", "gui", "-c", NULL}; //Modified
+static const char *scrshotcmd[] = {"flameshot", "gui", NULL}; //Modified
 
 
 static const Key keys[] = {
