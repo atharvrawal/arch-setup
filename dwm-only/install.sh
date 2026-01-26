@@ -110,6 +110,9 @@ function fish_prompt
 end
 EOF
 
+mkdir ~/.config/kitty
+echo "font_family Hack Nerd Font" >>~/.config/kitty/kitty.conf
+
 
 
 # ---------- Dark Theme Thunar ----------
