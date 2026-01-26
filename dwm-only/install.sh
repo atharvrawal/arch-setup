@@ -15,7 +15,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol \
                 bluez bluez-utils bluez-obex \
                 xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk \
-                kitty fish eza rofi btop qbittorrent flameshot\
+                kitty fish eza rofi btop qbittorrent flameshot xclip xsel \
                 flatpak ntfs-3g \
                 nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \
                 --needed --noconfirm
