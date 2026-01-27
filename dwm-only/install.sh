@@ -111,7 +111,9 @@ end
 EOF
 
 mkdir ~/.config/kitty
-echo "font_family Hack Nerd Font" >>~/.config/kitty/kitty.conf
+echo "font_family Hack Nerd Font" >> ~/.config/kitty/kitty.conf
+echo "background_opacity 0.7" >> ~/.config/kitty/kitty.conf
+
 
 
 
@@ -148,6 +150,11 @@ update-desktop-database ~/.local/share/applications
 echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""
 
+
+
+# ---------- Picom Config ----------
+mkdir -p ~/.config/picom
+cp ~/arch-setup/dwm-only/picom.conf ~/.config/picom/picom.conf
 
 
 # ---------- DWM Install ----------
