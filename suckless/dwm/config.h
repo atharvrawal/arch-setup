@@ -17,7 +17,7 @@ static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_gray4, col_gray1, col_cyan  }, // Modified
 };
 
 /* tagging */
@@ -68,7 +68,7 @@ static const char *scrshotcmd[] = {"flameshot", "gui", NULL}; //Modified
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } }, 
+	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // Modified
 	{ ALTKEY,                       XK_Return, spawn,          {.v = termcmd } }, // Modified
 	{ MODKEY,                       XK_e,      spawn,          {.v = filecmd } }, // Modified
 	{ ALTKEY,                       XK_space,  spawn,          {.v = roficmd } }, // Modified
