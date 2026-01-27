@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 0;        /* border pixel of windows */ //
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"Hack Nerd Font:size=10"}; // Modified
-static const char dmenufont[]       = "Hack Nerd Font:size=10"; // Modified
+static const char *fonts[]          = {"JetBrainsMono Nerd Font:size=10"}; // Modified
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=10"; // Modified
 static const unsigned int gappx     = 1;        /* gaps between windows */  // Modified
 
 static const char col_gray1[]       = "#222222";
@@ -40,7 +40,7 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
+	{ "[ ] =",      tile },    /* first entry is default */
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
@@ -61,17 +61,15 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "kitty", NULL }; // Modified
-static const char *roficmd[]  = { "rofi", "-show", "drun", NULL }; // Modified
 static const char *filecmd[] = {"thunar", NULL}; // Modified
 static const char *scrshotcmd[] = {"flameshot", "gui", NULL}; //Modified
 
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // Modified
+	{ ALTKEY,                       XK_space,  spawn,          {.v = dmenucmd } }, // Modified
 	{ ALTKEY,                       XK_Return, spawn,          {.v = termcmd } }, // Modified
 	{ MODKEY,                       XK_e,      spawn,          {.v = filecmd } }, // Modified
-	{ ALTKEY,                       XK_space,  spawn,          {.v = roficmd } }, // Modified
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          {.v = scrshotcmd } }, // Modified
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
