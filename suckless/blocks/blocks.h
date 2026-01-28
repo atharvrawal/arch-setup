@@ -6,7 +6,7 @@ static const Block blocks[] = {
     {"  ",       "free -h | awk '/^Mem/ {print $3\"/\"$2}' | sed s/i//g",       10, 0},
     {" ",       "df -h / | awk 'NR==2 {print $3\"/\"$2}'",                    60, 0},
     {"  ",       "pamixer --get-volume-human",                               2,  0},
-    {"󰥔 ",      "date '+%b %d (%a) %H:%M'",                                   5,  0},
+    {"󰥔 ",      "date '+%b %d (%a) %H:%M %p'",                                   5,  0},
 };
 
 
