@@ -14,9 +14,9 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-
                 thunar gvfs gvfs-mtp gvfs-smb \
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol \
                 bluez bluez-utils bluez-obex \
-                xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk \
+                xorg-server xorg-xinit xorg-xrandr xorg-xinput libx11 libxinerama libxft webkit2gtk \
                 kitty fish eza btop qbittorrent flameshot xclip xsel picom\
-                flatpak ntfs-3g polkit polkit-qt5 \
+                flatpak ntfs-3g polkit lxqt-policykit brightnessctl arandr\
                 nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \
                 --needed --noconfirm
 
@@ -165,12 +165,12 @@ cd ~/arch-setup/suckless/dwm
 sudo make clean install >/dev/null 2>&1
 cd ~/arch-setup/suckless/slock
 sudo make clean install >/dev/null 2>&1
-sudo groupadd -r nogroupc
+sudo groupadd -r nogroup
 cd ~/arch-setup/suckless/blocks
 sudo make clean install >/dev/null 2>&1
 
 cd ~
-echo "polkit-qt5-agent &" >> ~/.xinitrc
+echo "lxqt-policykit-agent &" >> ~/.xinitrc
 echo "flameshot &" >> ~/.xinitrc
 echo "picom &" >> ~/.xinitrc
 echo "dwmblocks &" >> ~/.xinitrc
