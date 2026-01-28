@@ -16,7 +16,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-
                 bluez bluez-utils bluez-obex \
                 xorg-server xorg-xinit xorg-xrandr libx11 libxinerama libxft webkit2gtk \
                 kitty fish eza btop qbittorrent flameshot xclip xsel picom\
-                flatpak ntfs-3g \
+                flatpak ntfs-3g polkit polkit-qt5 \
                 nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \
                 --needed --noconfirm
 
@@ -169,6 +169,7 @@ cd ~/arch-setup/suckless/blocks
 sudo make clean install >/dev/null 2>&1
 
 cd ~
+echo "polkit-qt5-agent &" >> ~/.xinitrc
 echo "flameshot &" >> ~/.xinitrc
 echo "picom &" >> ~/.xinitrc
 echo "dwmblocks &" >> ~/.xinitrc
