@@ -9,8 +9,9 @@ static const char *fonts[]          = {"Hack Nerd Font:size=10"}; // Modified
 static const char dmenufont[]       = "Hack Nerd Font:size=10"; // Modified
 static const unsigned int gappx     = 1;        /* gaps between windows */  // Modified
 
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#292929";
+static const char col_black[]		= "#000000";		// Modified
+static const char col_gray1[]       = "#111111";
+static const char col_gray2[]       = "#222222";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
@@ -18,8 +19,8 @@ static const char col_red[]			= "#8d0000";		// Modified
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_gray2, col_cyan  }, // Modified
+	[SchemeNorm] = { col_gray3, col_black, col_gray1 },
+	[SchemeSel]  = { col_gray4, col_gray1, col_cyan  }, // Modified
 };
 
 /* tagging */

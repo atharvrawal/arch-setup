@@ -2,7 +2,7 @@
 /* Default settings; can be overriden by command line. */
 
 static int topbar = 1;                      /* -b  option; if 0, dmenu appears at bottom     */
-static const unsigned int alpha = 0x55;     /* Amount of opacity. 0xff is opaque             */				// Modified
+static const unsigned int alpha = 0xCC;     /* Amount of opacity. 0xff is opaque             */				// Modified
 static int centered = 1;                    /* -c option; centers dmenu on screen */ 						// Modified
 static int min_width = 500;                    /* minimum width when centered */ 							// Modified
 static const float menu_height_ratio = 4.0f;  /* This is the ratio used in the original calculation */		// Modified
@@ -14,7 +14,7 @@ static const char *prompt      = NULL;      /* -p  option; prompt to the left of
 static const char *colors[SchemeLast][2] = {
 	/*     fg         bg       */
 	[SchemeNorm] = { "#ffffff", "#000000" },
-	[SchemeSel] = { "#ffffff", "#a40000" },
+	[SchemeSel] = { "#ffffff", "#111111" },
 	[SchemeOut] = { "#000000", "#006666" },
 };
 
@@ -25,7 +25,10 @@ static const unsigned int alphas[SchemeLast][2] = {			// Modified
 };															// Modified
 
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
-static unsigned int lines      = 5;
+static unsigned int lines      = 3;
+/* -h option; minimum height of a menu line */
+static unsigned int lineheight = 35;
+static unsigned int min_lineheight = 8;
 
 /*
  * Characters not considered part of a word while deleting words
