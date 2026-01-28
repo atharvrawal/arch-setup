@@ -32,6 +32,11 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 - `useless gap`
 - `nextprev -> shiftview`
 
+## Dmenu Patches used
+- `alpha`
+- `caseinsensitive`
+- `center`
+
 ## Touchpad enable 
 - `xinput list` to list all available devices
 - `xinput list-props <deviceID>` to list all available options
