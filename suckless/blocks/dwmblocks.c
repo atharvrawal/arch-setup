@@ -34,7 +34,7 @@ void setupsignals();
 void sighandler(int signum);
 int getstatus(char *str, char *last);
 void statusloop();
-void termhandler();
+void termhandler(int sig);
 void pstdout();
 #ifndef NO_X
 void setroot();
@@ -53,7 +53,7 @@ static void (*writestatus) () = pstdout;
 static char statusbar[LENGTH(blocks)][CMDLENGTH] = {0};
 static char statusstr[2][STATUSLENGTH];
 static int statusContinue = 1;
-static int returnStatus = 0;
+// static int returnStatus = 0;	// Modified (commented because of unused variable warning)
 
 //opens process *cmd and stores output in *output
 void getcmd(const Block *block, char *output)
@@ -185,7 +185,7 @@ void sighandler(int signum)
 	writestatus();
 }
 
-void termhandler()
+void termhandler(int sig)
 {
 	statusContinue = 0;
 }
