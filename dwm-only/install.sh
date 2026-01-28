@@ -12,11 +12,11 @@ echo ""
 # ---------- Pacman Packages Install ----------
 sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet fastfetch \
                 thunar gvfs gvfs-mtp gvfs-smb \
-                pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber wiremix pavucontrol \
+                pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer \
                 bluez bluez-utils bluez-obex \
                 xorg-server xorg-xinit xorg-xrandr xorg-xinput libx11 libxinerama libxft webkit2gtk \
-                kitty fish eza btop qbittorrent flameshot xclip xsel picom\
-                flatpak ntfs-3g polkit lxqt-policykit brightnessctl arandr\
+                kitty fish eza btop qbittorrent flameshot xclip xsel picom \
+                flatpak ntfs-3g polkit lxqt-policykit brightnessctl arandr \
                 nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \
                 --needed --noconfirm
 
