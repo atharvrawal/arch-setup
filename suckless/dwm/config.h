@@ -10,7 +10,7 @@ static const char dmenufont[]       = "Hack Nerd Font:size=10"; // Modified
 static const unsigned int gappx     = 1;        /* gaps between windows */  // Modified
 
 static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
+static const char col_gray2[]       = "#292929";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
