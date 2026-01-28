@@ -165,6 +165,7 @@ cd ~/arch-setup/suckless/dwm
 sudo make clean install >/dev/null 2>&1
 cd ~/arch-setup/suckless/slock
 sudo make clean install >/dev/null 2>&1
+sudo groupadd -r nogroupc
 cd ~/arch-setup/suckless/blocks
 sudo make clean install >/dev/null 2>&1
 
