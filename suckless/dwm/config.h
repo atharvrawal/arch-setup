@@ -7,7 +7,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {"Hack Nerd Font:size=10"}; // Modified
 static const char dmenufont[]       = "Hack Nerd Font:size=10"; // Modified
-static const unsigned int gappx     = 1;        /* gaps between windows */  // Modified
+static const unsigned int gappx     = 0;        /* gaps between windows */  // Modified
 
 static const char col_black[]		= "#000000";		// Modified
 static const char col_gray1[]       = "#111111";
@@ -60,6 +60,8 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/kitty", "-c", cmd, NULL } } // Modified
 
+#define STATUSBAR "dwmblocks"	// Modified
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };	// Modified
@@ -105,10 +107,10 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY,                       XK_q,      quit,           {0} }, // Modified
-	{ ALTKEY,                       XK_l,      shiftview,      {.i = +1}}, // Modified
-	{ ALTKEY,                       XK_h,      shiftview,      {.i = -1}}, // Modified
-	{ ALTKEY|ShiftMask,             XK_l,      shiftwindow,    {.i = +1}}, // Modified
-	{ ALTKEY|ShiftMask,             XK_h,      shiftwindow,    {.i = -1}}, // Modified
+	{ ALTKEY,                       XK_l,      shiftview,      {.i = +1}},  // Modified
+	{ ALTKEY,                       XK_h,      shiftview,      {.i = -1}},  // Modified
+	{ ALTKEY|ShiftMask,             XK_l,      shiftwindow,    {.i = +1}},  // Modified
+	{ ALTKEY|ShiftMask,             XK_h,      shiftwindow,    {.i = -1}},  // Modified
 };
 
 /* button definitions */
@@ -118,7 +120,10 @@ static const Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+// 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },	// Modified
+	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },			// Modified 
+	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },			// Modified
+	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },			// Modified
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
