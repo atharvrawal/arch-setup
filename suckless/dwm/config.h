@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/usr/bin/kitty", "-c", cmd, NULL } } // Modified
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } } // Modified
 
 #define STATUSBAR "dwmblocks"	// Modified
 
@@ -111,6 +111,12 @@ static const Key keys[] = {
 	{ ALTKEY,                       XK_h,      shiftview,      {.i = -1}},  // Modified
 	{ ALTKEY|ShiftMask,             XK_l,      shiftwindow,    {.i = +1}},  // Modified
 	{ ALTKEY|ShiftMask,             XK_h,      shiftwindow,    {.i = -1}},  // Modified
+	{ 0, XF86XK_AudioLowerVolume, 	spawn, 	   SHCMD("pamixer -d 5; pkill -RTMIN+1 dwmblocks") },	// Modified
+	{ 0, XF86XK_AudioRaiseVolume, 	spawn,     SHCMD("pamixer -i 5; pkill -RTMIN+1 dwmblocks") },	// Modified
+	{ 0, XF86XK_AudioMute, 			spawn,     SHCMD("pamixer -t; pkill -RTMIN+1 dwmblocks") },		// Modified
+	{ 0, XF86XK_MonBrightnessDown, 	spawn,     SHCMD("brightnessctl set 5%-") },					// Modified
+	{ 0, XF86XK_MonBrightnessUp,   	spawn,     SHCMD("brightnessctl set 5%+") },					// Modified
+
 };
 
 /* button definitions */
@@ -124,6 +130,8 @@ static const Button buttons[] = {
 	{ ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },			// Modified 
 	{ ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },			// Modified
 	{ ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },			// Modified
+	{ ClkStatusText,        0,              Button4,        sigstatusbar,   {.i = 4} },			// Modified 
+	{ ClkStatusText,        0,              Button5,        sigstatusbar,   {.i = 5} },			// Modified
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
