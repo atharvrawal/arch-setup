@@ -1,7 +1,4 @@
 #!/bin/sh
-LOCK="/tmp/$(basename $0).lock"
-exec 9>"$LOCK" || exit
-flock -n 9 || exit
 
 cpu() {
   read -r _ a b c d e _ < /proc/stat

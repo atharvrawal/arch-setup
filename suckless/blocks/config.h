@@ -21,8 +21,7 @@
     X("  ",  "~/arch-setup/suckless/blocks/scripts/audio.sh",     0,  1)  /* signal only */      \
     X("", "~/arch-setup/suckless/blocks/scripts/wifi.sh", 0, 2) \
     X("", "~/arch-setup/suckless/blocks/scripts/system.sh", 60, 3)  \
-    X(" ", "date '+%a %d %b'", 0, 0)  \
-    X("󰥔 ", "date '+%H:%M'", 60, 0)
+    X("", "~/arch-setup/suckless/blocks/scripts/time.sh", 60, 4) \
 
 #endif  // CONFIG_H
     

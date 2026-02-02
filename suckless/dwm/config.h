@@ -7,9 +7,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {"Hack Nerd Font:size=10"}; // Modified
 static const char dmenufont[]       = "Hack Nerd Font:size=10"; // Modified
+static unsigned int baralpha        = 0xd0;
+static unsigned int borderalpha     = OPAQUE;
 static const unsigned int gappx     = 0;        /* gaps between windows */  // Modified
 
-static const char col_black[]		= "#000000";		// Modified
+static const char col_black[]	    = "#000000";		// Modified
 static const char col_gray1[]       = "#111111";
 static const char col_gray2[]       = "#222222";
 static const char col_gray3[]       = "#bbbbbb";

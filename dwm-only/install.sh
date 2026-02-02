@@ -15,7 +15,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer \
                 bluez bluez-utils bluez-obex \
                 xorg-server xorg-xinit xorg-xrandr xorg-xinput libx11 libxinerama libxft webkit2gtk \
-                kitty fish eza btop qbittorrent flameshot xclip xsel picom \
+                kitty fish eza btop qbittorrent flameshot xclip xsel picom xwallpaper \
                 flatpak ntfs-3g polkit lxqt-policykit brightnessctl arandr clipmenu unzip \
                 nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \
                 --needed --noconfirm
@@ -176,6 +176,7 @@ echo "flameshot &" >> ~/.xinitrc
 echo "picom &" >> ~/.xinitrc
 echo "clipmenud &" >> ~/.xinitrc
 echo "dwmblocks &" >> ~/.xinitrc
+echo "xwallpaper --center ~/arch-setup/wallpaper.jpg &" >> ~/.xinitrc
 echo "exec /usr/local/bin/dwm" >> ~/.xinitrc
 chmod +x ~/.xinitrc
 
