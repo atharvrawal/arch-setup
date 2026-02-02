@@ -1,3 +1,7 @@
+LOCK="/tmp/$(basename $0).lock"
+exec 9>"$LOCK" || exit
+flock -n 9 || exit
+
 #!/bin/sh
 
 case $BLOCK_BUTTON in

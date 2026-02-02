@@ -10,7 +10,7 @@ echo ""
 
 
 # ---------- Pacman Packages Install ----------
-sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools network-manager-applet fastfetch jdk-openjdk \
+sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw network-manager-applet fastfetch jdk-openjdk \
                 thunar gvfs gvfs-mtp gvfs-smb \
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer \
                 bluez bluez-utils bluez-obex \
@@ -170,6 +170,7 @@ cd ~/arch-setup/suckless/blocks
 sudo make clean install >/dev/null 2>&1
 
 cd ~
+echo ". /etc/profile &" >> ~/.xinitrc
 echo "lxqt-policykit-agent &" >> ~/.xinitrc
 echo "flameshot &" >> ~/.xinitrc
 echo "picom &" >> ~/.xinitrc

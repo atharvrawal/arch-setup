@@ -117,8 +117,8 @@ static const Key keys[] = {
 	{ 0, XF86XK_AudioLowerVolume, 	spawn, 	   SHCMD("pamixer -d 5; pkill -RTMIN+1 dwmblocks") },	// Modified
 	{ 0, XF86XK_AudioRaiseVolume, 	spawn,     SHCMD("pamixer -i 5; pkill -RTMIN+1 dwmblocks") },	// Modified
 	{ 0, XF86XK_AudioMute, 			spawn,     SHCMD("pamixer -t; pkill -RTMIN+1 dwmblocks") },		// Modified
-	{ 0, XF86XK_MonBrightnessDown, 	spawn,     SHCMD("brightnessctl set 5%-") },					// Modified
-	{ 0, XF86XK_MonBrightnessUp,   	spawn,     SHCMD("brightnessctl set 5%+") },					// Modified
+	{ 0, XF86XK_MonBrightnessDown, 	spawn,     SHCMD("brightnessctl set 5%-; pkill -RTMIN+2 dwmblocks") },	// Modified				// Modified
+	{ 0, XF86XK_MonBrightnessUp,   	spawn,     SHCMD("brightnessctl set 5%+; pkill -RTMIN+2 dwmblocks") },	// Modified				// Modified
 
 };
 

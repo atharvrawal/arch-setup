@@ -19,11 +19,10 @@
 // Define blocks for the status feed as X(icon, cmd, interval, signal).
 #define BLOCKS(X)                                                         \
     X("  ",  "~/arch-setup/suckless/blocks/scripts/audio.sh",     0,  1)  /* signal only */      \
-    X("󰃟 ",  "brightnessctl -m | cut -d, -f4",           0,  2)                         \
-    X("󰖩 ",  "printf '%s  %s' \"$(nmcli -t -f ACTIVE,SSID dev wifi | grep '^yes' | cut -d: -f2)\" \"$(ip route get 1 | awk '{print $7}')\"", 60, 0) \
-    X("  ", "awk '{u=$2+$4; t=$2+$4+$5} NR==1{pu=u; pt=t} NR==2{printf \"%.0f%%\", 100*(u-pu)/(t-pt)}' <(grep '^cpu ' /proc/stat; sleep 1; grep '^cpu ' /proc/stat)", 0, 0)    \
-    X("  ",  "free -m | awk '/^Mem/ {printf \"%.0f%%\", ($3/$2)*100}'", 60, 0)            \
-    X("󰁹 ", "printf '%s' $(cat /sys/class/power_supply/BAT0/capacity)", 60, 0)  \
-    X(" ",  "printf '%s 󰥔 %s' \"$(date '+%a %d %b ')\" \"$(date '+%H:%M ')\"", 60, 0)
+    X("", "~/arch-setup/suckless/blocks/scripts/wifi.sh", 0, 2) \
+    X("", "~/arch-setup/suckless/blocks/scripts/system.sh", 60, 3)  \
+    X(" ", "date '+%a %d %b'", 0, 0)  \
+    X("󰥔 ", "date '+%H:%M'", 60, 0)
 
 #endif  // CONFIG_H
+    
