@@ -3,9 +3,10 @@
 #     iw dev | awk '/ssid/ {printf "󰖩 %s", $2}'
 # }
 
+wifi_ssid=$(timeout 1 iw dev 2>/dev/null)
+dev=$(stdbuf -oL ip route show default 2>/dev/null | awk '{print $5; exit}')
+
 ssid() {
-  wifi_ssid=$(timeout 1 iw dev 2>/dev/null)
-  dev=$(stdbuf -oL ip route show default 2>/dev/null | awk '{print $5; exit}')
   if [ -n "$wifi_ssid" ]; then
     printf "󰖩 %s" "$wifi_ssid"
     return
@@ -13,13 +14,23 @@ ssid() {
     printf "  $dev"
     return
   else
-    echo ""
+    echo " "
+    return
   fi
 }
 
 
 ip() {
+  if [ -n "$wifi_ssid" ]; then
     stdbuf -oL ip route get 1 | awk '{for(i=1;i<=NF;i++) if($i=="src") {printf "󰖩 %s", $(i+1)}}'
+    return
+  elif [ -n "$dev" ]; then
+    stdbuf -oL ip route get 1 | awk '{for(i=1;i<=NF;i++) if($i=="src") {printf " %s", $(i+1)}}'
+    return
+  else
+    echo " "
+    return
+  fi
 }
 
 STATE="$HOME/.cache/dwmblocks-wifi"
