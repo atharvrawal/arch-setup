@@ -25,7 +25,7 @@ ip() {
     stdbuf -oL ip route get 1 | awk '{for(i=1;i<=NF;i++) if($i=="src") {printf "󰖩 %s", $(i+1)}}'
     return
   elif [ -n "$dev" ]; then
-    stdbuf -oL ip route get 1 | awk '{for(i=1;i<=NF;i++) if($i=="src") {printf " %s", $(i+1)}}'
+    stdbuf -oL ip route get 1 | awk '{for(i=1;i<=NF;i++) if($i=="src") {printf "  %s", $(i+1)}}'
     return
   else
     echo " "
