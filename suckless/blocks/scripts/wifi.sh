@@ -4,7 +4,29 @@
 # }
 
 ssid() {
-  timeout 0.1 iw dev 2>/dev/null | awk '/ssid/ {printf "󰖩 %s", $2}'
+  # wifi_ssid=$(timeout 1 iw dev 2>/dev/null)
+  # dev=$(ip route show default 2>/dev/null | awk '{print $5; exit}')
+  # if [ -n "$wifi_ssid" ]; then
+  #   printf "󰖩 %s" "$wifi_ssid"
+  #   return
+  # elif [ -n  "$dev" ]; then
+  #   printf " %s" "$dev"
+  #   return
+  # else
+  #   echo ""
+  # fi
+  dev=$(ip route show default 2>/dev/null | awk '{print $5; exit}')
+
+  if [ -n "$dev" ] && iw dev "$dev" link 2>/dev/null | grep -q "Connected"; then
+    wifi_ssid=$(iw dev "$dev" link | awk -F': ' '/SSID/ {print $2}')
+    printf "󰖩 %s" "$wifi_ssid"
+  elif [ -n "$dev" ]; then
+    printf " %s" "$dev"
+  else
+    echo ""
+  fi
+}
+
 }
 
 ip() {
