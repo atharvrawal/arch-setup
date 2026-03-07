@@ -153,5 +153,6 @@ update-desktop-database ~/.local/share/applications
 echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""
 
-
+mkdir ~/.sway
+cp config ~/.sway/config
 echo "✅ Sway Setup Successful"
