@@ -14,10 +14,11 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 thunar gvfs gvfs-mtp gvfs-smb \
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer \
                 bluez bluez-utils bluez-obex \
-                sway swaybg swaylock swayidle waybar wl-clipboard grim slurp xdg-desktop-portal-wlr \
+                sway swaybg swaylock swayidle jq waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-wlr \
                 foot fish eza btop qbittorrent\
                 flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip \
                 libva mesa \
+                sof-firmware alsa-firmware \
                 --needed --noconfirm
 
 
@@ -80,8 +81,7 @@ echo ""
 # Bluetooth Server Setup (Bluez)
 sudo systemctl enable --now bluetooth
 echo "✅ Bluetooth Setup Successful"
-echo ""
-
+echo "" 
 # Fish Setup
 chsh -s /usr/bin/fish
 mkdir ~/.config/fish
@@ -115,6 +115,7 @@ EOF
 
 mkdir -p ~/.config/foot
 echo "font=Hack Nerd Font:size=11" >> ~/.config/foot/foot.ini
+echo "[colors-dark]" >> ~/.config/foot/foot.ini
 echo "alpha=0.7" >> ~/.config/foot/foot.ini
 
 
@@ -153,6 +154,15 @@ update-desktop-database ~/.local/share/applications
 echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""
 
-mkdir ~/.sway
+# waybar
+sudo rm -rf ~/.config/waybar
+mkdir -p ~/.config/waybar
+ln -s ~/arch-setup/sway/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null 2>&1
+ln -s ~/arch-setup/sway/waybar/style.css ~/.config/waybar/style.css >/dev/null 2>&1
+ln -s ~/arch-setup/sway/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
+echo "✅ Waybar symlink successfully setup"
+
+
+mkdir -p ~/.sway
 cp config ~/.sway/config
 echo "✅ Sway Setup Successful"
