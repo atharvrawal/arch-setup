@@ -1,8 +1,8 @@
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
-#
 # Read `man 5 sway` for a complete reference.
+exec albert
 exec waybar
 ### Variables
 #
@@ -16,14 +16,21 @@ set $right l
 # Your preferred terminal emulator
 set $term foot
 # Your preferred application launcher
-set $menu wofi --show drun
+# set $menu wofi --show drun
+set $menu albert toggle
 set $file-manager thunar
+
+for_window [app_id="blueman-manager"] floating enable, move position center
+for_window [app_id="com.network.manager"] floating enable, move position center
+for_window [app_id="Alacritty"] floating enable, move position center
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable, move position center
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Downloads/wallpaper.jpg fill
-#
+# output * bg ~/Pictures/Wallpapers/wallpaper2.jpg fill
+exec_always sh -c 'd=~/Pictures/Wallpapers; f=($d/*.jpg); i=$(($(cat /tmp/w 2>/dev/null||echo -1)+1)); n=${#f[@]}; i=$((i%n)); echo $i>/tmp/w; swaymsg "output * bg ${f[$i]} fill"'
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -66,7 +73,7 @@ output * bg ~/Downloads/wallpaper.jpg fill
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym Mod1+Return exec $term
 
     # Kill focused window
     bindsym $mod+c kill
@@ -77,6 +84,8 @@ output * bg ~/Downloads/wallpaper.jpg fill
     bindsym $mod+e exec $file-manager
 
     bindsym $mod+Shift+w exec ~/.config/waybar/toggle-waybar.sh
+
+    bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -171,10 +180,10 @@ output * bg ~/Downloads/wallpaper.jpg fill
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym Mod1+Shift+space floating toggle
+    bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    # bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent

@@ -12,12 +12,12 @@ echo ""
 # ---------- Pacman Packages Install ----------
 sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw network-manager-applet fastfetch jdk-openjdk \
                 thunar gvfs gvfs-mtp gvfs-smb \
-                pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer \
-                bluez bluez-utils bluez-obex \
+                pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer pulsemixer\
+                bluez bluez-utils bluez-obex blueman \
                 sway swaybg swaylock swayidle jq waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-wlr \
-                foot fish eza btop qbittorrent\
+                alacritty foot fish eza btop qbittorrent\
                 flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip \
-                libva mesa \
+                libva mesa hostapd qt6ct greetd \
                 sof-firmware alsa-firmware \
                 --needed --noconfirm
 
@@ -56,7 +56,8 @@ echo ""
 
 
 # ---------- Paru Package Install ----------
-paru -S visual-studio-code-bin materia-gtk-theme papirus-icon-theme firefox-developer-edition ttf-hack-nerd\
+paru -S visual-studio-code-bin colloid-gtk-theme-git colloid-icon-theme-git \
+        firefox-developer-edition ttf-hack-nerd power-profiles-daemon nmgui-bin\
         --needed --noconfirm
 
 
@@ -122,21 +123,8 @@ echo "alpha=0.7" >> ~/.config/foot/foot.ini
 
 
 # ---------- Dark Theme Thunar ----------
-mkdir -p ~/.config/gtk-3.0
-cat > ~/.config/gtk-3.0/settings.ini <<EOF
-[Settings]
-gtk-theme-name=Materia-dark
-gtk-icon-theme=Papirus-Dark
-gtk-application-prefer-dark-theme=true
-EOF
-
-mkdir -p ~/.config/gtk-4.0
-cat > ~/.config/gtk-4.0/settings.ini <<EOF
-[Settings]
-gtk-theme-name=Materia-dark
-gtk-icon-theme=Papirus-Dark
-gtk-application-prefer-dark-theme=true
-EOF
+gsettings set org.gnome.desktop.interface gtk-theme Colloid-Dark
+gsettings set org.gnome.desktop.interface icon-theme Colloid-dark
 
 # Thunar Setup (xdg-open)
 mkdir -p ~/.local/share/applications
@@ -154,7 +142,7 @@ update-desktop-database ~/.local/share/applications
 echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""
 
-# waybar
+# Waybar
 sudo rm -rf ~/.config/waybar
 mkdir -p ~/.config/waybar
 ln -s ~/arch-setup/sway/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null 2>&1
@@ -162,7 +150,20 @@ ln -s ~/arch-setup/sway/waybar/style.css ~/.config/waybar/style.css >/dev/null 2
 ln -s ~/arch-setup/sway/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
 echo "✅ Waybar symlink successfully setup"
 
+# greetd
+sudo rm /etc/issue
+sudo touch /etc/issue
+sudo rm /etc/greetd/config.toml
+sudo tee /etc/greetd/config.toml > /dev/null <<'EOF'
+[terminal]
+vt = 1
 
+[default_session]
+command = "agreety --cmd sway"
+user = "greeter"
+EOF
+
+# Sway config
 mkdir -p ~/.sway
-cp config ~/.sway/config
+ln -s ~/arch-setup/sway/config ~/.sway/config
 echo "✅ Sway Setup Successful"

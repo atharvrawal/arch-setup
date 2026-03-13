@@ -8,10 +8,10 @@
 	- dump : 0 or 1 i.e. disable or enable backup dump utility {keep 0, no one cares}
 	- file system check : 0 or 1 i.e. disables or enables fsck {keep 0, no one cares} 
 	- Hence, final line :
-		- `UUID=EAAE69DBAE69A0B5    /mnt/Windows    ntfs    defaults    0    0`
+		- `UUID=3EA86128A860DFBF    /mnt/Windows    ntfs    defaults    0    0`
 - To and a symbolic link to the home dir
 	- `mkdir Windows`
-	- `ln -s /mnt/Windows/Users/Atharv /home/atharv/Windows` 
+	- `ln -s /mnt/Windows/Users/atharv /home/atharv/Windows` 
 	- `ln -s /mnt/Windows /home/atharv/Windows` 
 	```bash
 	atharvrawal@fedora:~/Windows$ tree
