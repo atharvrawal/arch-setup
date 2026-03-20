@@ -67,6 +67,8 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 	- `env = __GLX_VENDOR_LIBRARY_NAME,nvidia`
 - Reboot
 
+`sudo mkinitcpio -c /etc/mkinitcpio-novfio.conf -g /boot/initramfs-linux-lts-novfio.img`
+
 ## QEMU Setup
 - Making Virtual Disk : `qemu-img create -f qcow2 /path/to/distro.qcow2 50G`
 - Installing VM's :

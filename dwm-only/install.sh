@@ -17,7 +17,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 xorg-server xorg-xinit xorg-xrandr xorg-xinput libx11 libxinerama libxft webkit2gtk \
                 kitty fish eza btop qbittorrent flameshot xclip xsel picom xwallpaper \
                 flatpak ntfs-3g polkit lxqt-policykit brightnessctl arandr clipmenu unzip \
-                nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa \
+                nvidia-dkms nvidia-utils nvidia-prime libva libva-nvidia-driver mesa linux-lts-headers \
                 --needed --noconfirm
 
 

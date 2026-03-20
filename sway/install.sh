@@ -14,10 +14,10 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 thunar gvfs gvfs-mtp gvfs-smb \
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer pulsemixer\
                 bluez bluez-utils bluez-obex blueman \
-                sway swaybg swaylock swayidle jq waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-wlr \
-                alacritty foot fish eza btop qbittorrent\
+                hyprland hyprlock hypridle jq waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-hyprland \
+                alacritty foot fish eza btop qbittorrent wofi\
                 flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip \
-                libva mesa hostapd qt6ct greetd \
+                libva mesa hostapd qt6ct \
                 sof-firmware alsa-firmware \
                 --needed --noconfirm
 
@@ -83,42 +83,16 @@ echo ""
 sudo systemctl enable --now bluetooth
 echo "✅ Bluetooth Setup Successful"
 echo "" 
+
 # Fish Setup
-chsh -s /usr/bin/fish
 mkdir ~/.config/fish
-cat << 'EOF' >> ~/.config/fish/config.fish
-set -g fish_greeting ""
-alias ls='eza --icons'
-alias la='eza -la --icons'
-# Only run in interactive shells
-if status is-interactive
-	fastfetch
-end
-
-set -U fish_prompt_pwd_dir_length 0
-
-function fish_prompt
-	echo ''
-	set_color blue
-	echo -n (prompt_pwd)
-
-	# Git status
-	if test -d .git
-		set_color green
-		echo -n ' on  ' (git branch --show-current)'*'
-	end
-	set_color magenta
-	echo ''
-	echo -n '❯ '
-	set_color normal
-end
-EOF
+chsh -s /usr/bin/fish
+ln -s ~/arch-setup/sway/config.fish ~/.config/fish/config.fish >/dev/null 2>&1
 
 mkdir -p ~/.config/foot
 echo "font=Hack Nerd Font:size=11" >> ~/.config/foot/foot.ini
 echo "[colors-dark]" >> ~/.config/foot/foot.ini
 echo "alpha=0.7" >> ~/.config/foot/foot.ini
-
 
 
 
@@ -150,18 +124,11 @@ ln -s ~/arch-setup/sway/waybar/style.css ~/.config/waybar/style.css >/dev/null 2
 ln -s ~/arch-setup/sway/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
 echo "✅ Waybar symlink successfully setup"
 
-# greetd
-sudo rm /etc/issue
-sudo touch /etc/issue
-sudo rm /etc/greetd/config.toml
-sudo tee /etc/greetd/config.toml > /dev/null <<'EOF'
-[terminal]
-vt = 1
-
-[default_session]
-command = "agreety --cmd sway"
-user = "greeter"
-EOF
+# Hyprland
+sudo rm -rf ~/.config/hypr
+mkdir -p ~/.config/hypr
+ln -s ~/arch-setup/sway/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 2>&1
+echo "✅ hyprland.conf symlink successful setup"
 
 # Sway config
 mkdir -p ~/.sway
