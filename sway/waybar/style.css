@@ -2,8 +2,8 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", monospace;
-    font-size: 13px;
+    font-family: "Hack Nerd Font";
+    font-size: 11px;
     min-height: 0;
     background: transparent;
 }
@@ -18,8 +18,8 @@ window#waybar {
 
 /* Workspaces */
 #workspaces button {
-    padding: 4px 6px;
-    margin: 6px 4px;
+    padding: 2px 2px;
+    margin: 2px 4px;
     border-radius: 8px;
     background: rgba(255,255,255,0.06);
     color: #777777;
@@ -54,7 +54,7 @@ window#waybar {
 #power-profiles-daemon {
     padding: 0 12px;
     margin: 4px 4px;
-    border-radius: 8px;
+    border-radius: 6px;
     background: rgba(255,255,255,0.07);
 }
 
@@ -146,12 +146,6 @@ window#waybar {
     color: #f7768e;
 }
 
-#power-profiles-daemon {
-    padding: 0 12px;
-    margin: 4px 4px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.06);
-}
 
 /* Performance */
 #power-profiles-daemon.performance {
