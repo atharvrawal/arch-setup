@@ -6,8 +6,10 @@ get_icon() {
     firefox* ) echo "" ;;
     code ) echo "󰨞" ;;
     foot ) echo "" ;;
-    discord ) echo "" ;;
-    * ) echo "?" ;;
+    discord ) echo "" ;;
+    vlc ) echo "󰕼" ;;
+    albert ) echo "󰀫" ;;
+    * ) echo "" ;;
   esac
 }
 
@@ -46,7 +48,7 @@ generate() {
     if [ "$entry" = "urgent" ]; then
       icon="<span size='130%' foreground='#f7768e'>!</span>"
     elif [ "$entry" = "multi" ]; then
-      icon="<span size='130%'></span>"
+      icon="<span size='130%'>󰕭</span>"
     elif [ "$entry" = "empty" ]; then
       icon="$ws"
     else
