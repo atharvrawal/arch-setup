@@ -122,6 +122,7 @@ mkdir -p ~/.config/waybar
 ln -s ~/arch-setup/sway/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null 2>&1
 ln -s ~/arch-setup/sway/waybar/style.css ~/.config/waybar/style.css >/dev/null 2>&1
 ln -s ~/arch-setup/sway/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
+ln -s ~/arch-setup/sway/waybar/ws_icons_event.sh ~/.config/waybar/ws_icons_event.sh >/dev/null 2>&1
 echo "✅ Waybar symlink successfully setup"
 
 # Hyprland
