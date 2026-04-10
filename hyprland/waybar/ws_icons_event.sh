@@ -8,7 +8,8 @@ get_icon() {
     foot ) echo "" ;;
     discord ) echo "" ;;
     vlc ) echo "󰕼" ;;
-    albert ) echo "󰀫" ;;
+    albert ) echo "󰍉" ;;
+    obsidian ) echo "󰠮" ;;
     * ) echo "" ;;
   esac
 }
