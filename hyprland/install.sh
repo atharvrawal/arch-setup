@@ -128,9 +128,9 @@ echo "✅ Waybar symlink successfully setup"
 # Hyprland
 sudo rm -rf ~/.config/hypr
 mkdir -p ~/.config/hypr
-ln -s ~/arch-setup/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/hyprpaper.conf ~/.config/hypr/hyprpaper.conf >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/hypr/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 2>&1 
+ln -s ~/arch-setup/hyprland/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf >/dev/null 2>&1
 mkdir -p ~/Pictures/Wallpapers
 cp ~/arch-setup/hyprland/wallpapers/* ~/Pictures/Wallpapers/ -r >/dev/null 2>&1
 echo "✅ hyprland.conf hyprlock.conf & hyprpaper.conf symlink successful setup"
