@@ -119,14 +119,18 @@ echo ""
 # Waybar
 sudo rm -rf ~/.config/waybar
 mkdir -p ~/.config/waybar
-ln -s ~/arch-setup/sway/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null 2>&1
-ln -s ~/arch-setup/sway/waybar/style.css ~/.config/waybar/style.css >/dev/null 2>&1
-ln -s ~/arch-setup/sway/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
-ln -s ~/arch-setup/sway/waybar/ws_icons_event.sh ~/.config/waybar/ws_icons_event.sh >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/waybar/style.css ~/.config/waybar/style.css >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/waybar/ws_icons_event.sh ~/.config/waybar/ws_icons_event.sh >/dev/null 2>&1
 echo "✅ Waybar symlink successfully setup"
 
 # Hyprland
 sudo rm -rf ~/.config/hypr
 mkdir -p ~/.config/hypr
-ln -s ~/arch-setup/sway/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 2>&1
-echo "✅ hyprland.conf symlink successful setup"
+ln -s ~/arch-setup/hyprland/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/hyprpaper.conf ~/.config/hypr/hyprpaper.conf >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/hyprlock.conf ~/.config/hypr/hyprlock.conf >/dev/null 2>&1
+mkdir -p ~/Pictures/Wallpapers
+cp ~/arch-setup/hyprland/wallpapers/* ~/Pictures/Wallpapers/ -r >/dev/null 2>&1
+echo "✅ hyprland.conf hyprlock.conf & hyprpaper.conf symlink successful setup"
