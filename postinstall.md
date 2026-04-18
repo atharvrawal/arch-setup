@@ -42,8 +42,18 @@ nmcli connection up "$(nmcli -g NAME connection show --active | head -n1)"
 - `xinput list-props <deviceID>` to list all available options
 - `xinput set-prop <deviceID> "libinput Tapping Enabled" 1
 
+## Elecwhat Darkmode
+- `sudo nvim /usr/bin/elecwhat`
+- Initially => `exec electron37 /usr/lib/elecwhat/app.asar "$@"`
+- Add Flags `--forece-dark-mode` `and` `--enable-features=WebUIDarkMode`
+```
+#!/bin/sh
+exec electron37 --force-dark-mode --enable-features=WebUIDarkMode \
+/usr/lib/elecwhat/app.asar "$@"
+```
+
 ## VS Code Setup
-- Editor: Font Family : `FiraCode Nerd Font`
+- Editor: Font Family : `Hack Nerd Font`
 
 ## Albert
 - Go to the main albert page

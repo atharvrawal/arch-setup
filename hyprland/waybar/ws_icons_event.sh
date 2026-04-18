@@ -10,7 +10,8 @@ get_icon() {
     vlc ) echo "󰕼" ;;
     albert ) echo "󰍉" ;;
     obsidian ) echo "󰠮" ;;
-    * ) echo "" ;;
+    elecwhat ) echo "󰖣" ;;
+    * ) echo "" ;;
   esac
 }
 
