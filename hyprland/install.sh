@@ -116,6 +116,13 @@ update-desktop-database ~/.local/share/applications
 echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""
 
+# Poweroff Setup
+sudo sed -i '/HandlePowerKey/d' /etc/systemd/logind.conf
+echo 'HandlePowerKey=ignore' | sudo tee -a /etc/systemd/logind.conf
+sudo systemctl restart systemd-logind
+echo "✅ Poweroff Button Setup Successful"
+echo ""
+
 # Waybar
 sudo rm -rf ~/.config/waybar
 mkdir -p ~/.config/waybar

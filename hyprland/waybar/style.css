@@ -70,12 +70,14 @@ window#waybar {
 #battery,
 #backlight,
 #bluetooth,
-#power-profiles-daemon {
-    padding: 0 12px;
-    margin: 5px 5px;
-    border-radius: 5px;
+#power-profiles-daemon,
+#tray  {
+    padding: 0px 12px;
+    margin: 5px 5px 6px 5px;
+    border-radius: 10px;
     background: rgba(255,255,255,0.07);
 }
+
 
 /* Bluetooth */
 #bluetooth {
