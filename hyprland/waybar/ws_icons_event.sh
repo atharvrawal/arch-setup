@@ -16,8 +16,9 @@ get_icon() {
     obsidian|Obsidian) echo "󰠮" ;;
     elecwhat) echo "󰖣" ;;
     thunar|Thunar) echo "" ;;
-    *blanket*|*Blanket*) echo "󱑽" ;;
-    brave-origin-beta) echo "" ;; 
+    #*blanket*|*Blanket*) echo "󱑽" ;;
+    *blanket*|*Blanket*) echo "" ;;
+    brave-origin-beta) echo "" ;;
     *) echo "" ;;
   esac
 }
