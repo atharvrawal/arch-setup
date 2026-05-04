@@ -16,7 +16,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 bluez bluez-utils bluez-obex blueman \
                 hyprland hyprlock hypridle hyprpaper jq socat waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-hyprland \
                 alacritty foot fish eza btop qbittorrent wofi\
-                flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip keepassxc \
+                flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip fontforge \
                 libva mesa hostapd qt6ct \
                 sof-firmware alsa-firmware \
                 --needed --noconfirm

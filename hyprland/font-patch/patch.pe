@@ -1,0 +1,17 @@
+Open($1)
+
+Select(0uE900)
+Import("icon1.svg")
+Scale(140)
+SetWidth(1300)
+
+#Add another image
+#Select(0uE901)
+#Import("second-icon.svg")
+#Scale(300)
+#SetWidth(1500)
+#900 onwards is chilling
+
+
+Generate($2)
+Quit()

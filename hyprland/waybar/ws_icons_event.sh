@@ -17,6 +17,7 @@ get_icon() {
     elecwhat) echo "󰖣" ;;
     thunar|Thunar) echo "" ;;
     *blanket*|*Blanket*) echo "󱑽" ;;
+    brave-origin-beta) echo "" ;; 
     *) echo "" ;;
   esac
 }
