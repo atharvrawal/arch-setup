@@ -11,6 +11,11 @@ Import("icon2.svg")
 Scale(600)
 SetWidth(1200)
 
+Select(0uE902)
+Import("icon3.svg")
+Scale(75)
+Move(-10, 30)
+SetWidth(1500)
 
 Generate($2)
 Quit()

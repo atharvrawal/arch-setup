@@ -9,6 +9,7 @@ get_icon() {
   case "$1" in
     firefox*|Firefox*) echo "" ;;
     code|Code) echo "󰨞" ;;
+    antigravity|Antigravity) echo "" ;;
     foot) echo "" ;;
     discord|Discord) echo "" ;;
     vlc|Vlc) echo "󰕼" ;;
