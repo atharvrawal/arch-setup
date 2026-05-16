@@ -15,7 +15,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer pulsemixer\
                 bluez bluez-utils bluez-obex blueman \
                 hyprland hyprlock hypridle hyprpaper jq socat waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-hyprland \
-                alacritty foot fish eza btop qbittorrent wofi\
+                alacritty foot fish eza btop qbittorrent wofi swaync \
                 flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip fontforge \
                 libva mesa hostapd qt6ct \
                 sof-firmware alsa-firmware \
@@ -131,6 +131,13 @@ ln -s ~/arch-setup/hyprland/waybar/style.css ~/.config/waybar/style.css >/dev/nu
 ln -s ~/arch-setup/hyprland/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
 ln -s ~/arch-setup/hyprland/waybar/ws_icons_event.sh ~/.config/waybar/ws_icons_event.sh >/dev/null 2>&1
 echo "✅ Waybar symlink successfully setup"
+
+# SwayNC
+sudo rm -rf ~/.config/swaync
+mkdir -p ~/.config/swaync
+ln -s ~/arch-setup/hyprland/swaync/config.json ~/.config/swaync/config.json >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/swaync/style.css ~/.config/swaync/style.css >/dev/null 2>&1
+echo "✅ SwayNC symlink successfully setup"
 
 # Hyprland
 sudo rm -rf ~/.config/hypr

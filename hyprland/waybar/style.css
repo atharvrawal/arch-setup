@@ -71,7 +71,8 @@ window#waybar {
 #backlight,
 #bluetooth,
 #power-profiles-daemon,
-#tray  {
+#tray,
+#custom-pomodoro{
     padding: 0px 12px;
     margin: 5px 5px 6px 5px;
     border-radius: 10px;
@@ -96,6 +97,11 @@ window#waybar {
 #clock {
     color: #7aa2f7;
     font-weight: bold;
+}
+
+#custom-pomodoro{
+    font-weight: bold;
+    color: #c30010;
 }
 
 /* CPU */

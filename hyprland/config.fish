@@ -92,5 +92,7 @@ end
 set -gx PATH $PATH /home/atharv/.lmstudio/bin
 # End of LM Studio CLI section
 
+set -x XAUTHORITY $HOME/.Xauthority
+
 export LD_LIBRARY_PATH=/opt/cuda/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/local/lib/ollama/cuda_v12:$LD_LIBRARY_PATH

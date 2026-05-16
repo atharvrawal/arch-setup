@@ -8,7 +8,8 @@
     // Choose the order of the modules
     "modules-left": [
       //  "hyprland/workspaces",
-	    "custom/ws-icons"
+	    "custom/ws-icons",
+	    "custom/pomodoro"
     ],
     "modules-center": [
         "clock"
@@ -22,7 +23,7 @@
 	"cpu",
         "temperature",
         "battery",
-	    "power-profiles-daemon"
+	"power-profiles-daemon"
     ],
     "hyprland/workspaces": {
     "on-click": "activate",
@@ -114,7 +115,7 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": true
     },
     "memory": {
         "format": "{}%  "
@@ -124,13 +125,22 @@
         "hwmon-path": "/sys/class/hwmon/hwmon10/temp1_input",
         "warning-threshold": 65,
 	    "critical-threshold": 85,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C {icon}",
         "format": "{temperatureC}°C {icon}",
         "format-icons": {
   		"default": "",
   		"warning": "",
   		"critical": ""
 	}	
+    },
+    "custom/pomodoro": {
+        "exec": "~/.config/waybar/pomodoro.sh",
+        "interval": 1,
+        "return-type": "json",
+    
+        "on-click": "~/.config/waybar/pomodoro.sh toggle",
+	"on-click-middle": "~/.config/waybar/pomodoro.sh skip",
+        "on-click-right": "~/.config/waybar/pomodoro.sh reset"
     },
     "backlight": {
         // "device": "acpi_video1",
