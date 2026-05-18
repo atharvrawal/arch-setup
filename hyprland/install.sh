@@ -15,7 +15,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer pulsemixer\
                 bluez bluez-utils bluez-obex blueman \
                 hyprland hyprlock hypridle hyprpaper jq socat waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-hyprland \
-                alacritty foot fish eza btop qbittorrent wofi swaync qt6-positioning \
+                alacritty foot fish eza btop qbittorrent wofi dunst qt6-positioning \
                 flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip fontforge \
                 libva mesa hostapd qt6ct \
                 sof-firmware alsa-firmware \
