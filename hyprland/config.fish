@@ -1,6 +1,8 @@
 set -g fish_greeting ""
 alias ls='eza --icons'
 alias la='eza -la --icons'
+alias copy='wl-copy'
+
 alias downclock='sudo cpupower frequency-set -u 1.0GHz'
 alias resetclock='sudo cpupower frequency-set -u 3.30GHz'
 

@@ -112,6 +112,9 @@ Categories=Utility;Core;GTK;
 MimeType=inode/directory;
 EOF
 update-desktop-database ~/.local/share/applications
+
+rm -rf ~/.config/Thunar
+ln -s ~/arch-setup/hyprland/Thunar ~/.config/Thunar >/dev/null 2>&1
 echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""
 
