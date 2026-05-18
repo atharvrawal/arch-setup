@@ -23,7 +23,8 @@
 	"cpu",
         "temperature",
         "battery",
-	"power-profiles-daemon"
+	"power-profiles-daemon",
+    "custom/notifications"
     ],
     "hyprland/workspaces": {
     "on-click": "activate",
@@ -108,6 +109,11 @@
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
     },
+    "custom/notifications": {
+        "format": "󰎟",
+        "on-click": "swaync-client -t",
+        "tooltip": false
+    },
     "clock": {
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -189,7 +195,7 @@
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%)  ",
         "format-ethernet": "{ipaddr}/{cidr}  ",
-        "on-click-right": "alacritty -e ~/code/wifi-tui/target/release/wifi-tui",
+        "on-click-right": "alacritty --class wifi-tui -e ~/code/wifi-tui/target/release/wifi-tui",
         "tooltip-format": "{ifname} via {gwaddr}  ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected 󰖟 ",

@@ -15,12 +15,11 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer pulsemixer\
                 bluez bluez-utils bluez-obex blueman \
                 hyprland hyprlock hypridle hyprpaper jq socat waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-hyprland \
-                alacritty foot fish eza btop qbittorrent wofi swaync \
+                alacritty foot fish eza btop qbittorrent wofi swaync qt6-positioning \
                 flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip fontforge \
                 libva mesa hostapd qt6ct \
                 sof-firmware alsa-firmware \
                 --needed --noconfirm
-
 
 
 # ---------- Rust Setup ----------
@@ -57,7 +56,7 @@ echo ""
 
 # ---------- Paru Package Install ----------
 paru -S visual-studio-code-bin colloid-gtk-theme-git colloid-icon-theme-git \
-        firefox-developer-edition ttf-hack-nerd power-profiles-daemon nmgui-bin\
+        firefox-developer-edition ttf-hack-nerd power-profiles-daemon brave-origin-nightly-bin\
         --needed --noconfirm
 
 
@@ -132,6 +131,12 @@ ln -s ~/arch-setup/hyprland/waybar/toggle-waybar.sh ~/.config/waybar/toggle-wayb
 ln -s ~/arch-setup/hyprland/waybar/ws_icons_event.sh ~/.config/waybar/ws_icons_event.sh >/dev/null 2>&1
 ln -s ~/arch-setup/hyprland/waybar/pomodoro.sh ~/.config/waybar/pomodoro.sh >/dev/null 2>&1
 echo "✅ Waybar symlink successfully setup"
+
+# QuickShell
+sudo rm -rf ~/.config/quickshell
+mkdir -p ~/.config/quickshell
+ln -s ~/arch-setup/hyprland/quickshell/shell.qml ~/.config/quickshell/shell.qml >/dev/null 2>&1
+echo "✅ QuickShell symlink successfully setup"
 
 # SwayNC
 sudo rm -rf ~/.config/swaync

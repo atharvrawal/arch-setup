@@ -72,13 +72,17 @@ window#waybar {
 #bluetooth,
 #power-profiles-daemon,
 #tray,
-#custom-pomodoro{
+#custom-pomodoro,
+#custom-notifications {
     padding: 0px 12px;
     margin: 5px 5px 6px 5px;
     border-radius: 10px;
     background: rgba(255,255,255,0.07);
 }
 
+#custom-notifications {
+    color: #7dcfff;
+}
 
 /* Bluetooth */
 #bluetooth {
