@@ -5,4 +5,5 @@ import QtQuick
 
 ShellRoot {
     Todo {}
+    Clock {}
 }

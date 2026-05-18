@@ -123,7 +123,7 @@ echo "✅ Poweroff Button Setup Successful"
 echo ""
 
 # Waybar
-sudo rm -rf ~/.config/waybar
+rm -rf ~/.config/waybar
 mkdir -p ~/.config/waybar
 ln -s ~/arch-setup/hyprland/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null 2>&1
 ln -s ~/arch-setup/hyprland/waybar/style.css ~/.config/waybar/style.css >/dev/null 2>&1
@@ -133,20 +133,20 @@ ln -s ~/arch-setup/hyprland/waybar/pomodoro.sh ~/.config/waybar/pomodoro.sh >/de
 echo "✅ Waybar symlink successfully setup"
 
 # QuickShell
-sudo rm -rf ~/.config/quickshell
+rm -rf ~/.config/quickshell
 mkdir -p ~/.config/quickshell
 ln -s ~/arch-setup/hyprland/quickshell/shell.qml ~/.config/quickshell/shell.qml >/dev/null 2>&1
 echo "✅ QuickShell symlink successfully setup"
 
-# SwayNC
-sudo rm -rf ~/.config/swaync
-mkdir -p ~/.config/swaync
-ln -s ~/arch-setup/hyprland/swaync/config.json ~/.config/swaync/config.json >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/swaync/style.css ~/.config/swaync/style.css >/dev/null 2>&1
-echo "✅ SwayNC symlink successfully setup"
+# Dunst
+rm -rf ~/.config/dunst
+mkdir -p ~/.config/dunst
+ln -s ~/arch-setup/hyprland/dunst/dunstrc ~/.config/dunst/dunstrc >/dev/null 2>&1
+echo "✅ Dunst symlink successfully setup"
+
 
 # Hyprland
-sudo rm -rf ~/.config/hypr
+rm -rf ~/.config/hypr
 mkdir -p ~/.config/hypr
 ln -s ~/arch-setup/hyprland/hypr/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 2>&1 
 ln -s ~/arch-setup/hyprland/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf >/dev/null 2>&1

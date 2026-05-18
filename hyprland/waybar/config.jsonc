@@ -23,8 +23,7 @@
 	"cpu",
         "temperature",
         "battery",
-	"power-profiles-daemon",
-    "custom/notifications"
+	"power-profiles-daemon"
     ],
     "hyprland/workspaces": {
     "on-click": "activate",
@@ -108,11 +107,6 @@
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
-    },
-    "custom/notifications": {
-        "format": "󰎟",
-        "on-click": "swaync-client -t",
-        "tooltip": false
     },
     "clock": {
         // "timezone": "America/New_York",
