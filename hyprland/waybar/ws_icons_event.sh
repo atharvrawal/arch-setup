@@ -21,6 +21,7 @@ get_icon() {
     *blanket*|*Blanket*) echo "" ;;
     brave-origin-beta) echo "" ;;
     wifi-tui) echo " " ;;
+    bluetooth) echo "󰂯" ;;
     *) echo "" ;;
   esac
 }

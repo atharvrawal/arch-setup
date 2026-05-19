@@ -147,6 +147,16 @@ mkdir -p ~/.config/dunst
 ln -s ~/arch-setup/hyprland/dunst/dunstrc ~/.config/dunst/dunstrc >/dev/null 2>&1
 echo "✅ Dunst symlink successfully setup"
 
+# Alacritty
+rm -rf ~/.config/alacritty 
+mkdir -p ~/.config/alacritty 
+cat > ~/.config/alacritty/alacritty.toml << EOF
+[window]
+opacity = 0.80
+
+[colors.primary]
+background = "#000000"
+EOF
 
 # Hyprland
 rm -rf ~/.config/hypr
