@@ -187,13 +187,13 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%)  ",
+        "format-wifi": "{ifname}: {ipaddr}/{cidr}",
         "format-ethernet": "{ipaddr}/{cidr}  ",
         "on-click-right": "alacritty --class wifi-tui -e ~/code/wifi-tui/target/release/wifi-tui",
         "tooltip-format": "{ifname} via {gwaddr}  ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected 󰖟 ",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "󰖟",
+        "format-alt": "{essid} ({signalStrength}%)  "
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

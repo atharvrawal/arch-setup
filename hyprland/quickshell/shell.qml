@@ -2,9 +2,10 @@ import Quickshell
 import Quickshell.Wayland
 import QtQuick
 
-
 ShellRoot {
     Todo {}
-    Clock {}
+    Stopwatch {}
     Notes {}
+    Dots {} 
+    Clock {}
 }

@@ -106,7 +106,7 @@ PanelWindow {
         anchors.fill: parent
 
         radius: 24
-        color: "#c0101010"
+        color: "#e0080808"
 
         border.width: 0
 
@@ -143,7 +143,7 @@ PanelWindow {
                     }
 
                     text: done + "/" + todoModel.count
-                    color: "#60ffffff"
+                    color: "#38ffffff"
                     font.pixelSize: 13
                     font.weight: Font.Medium
                 }
@@ -154,7 +154,7 @@ PanelWindow {
                 Layout.fillWidth: true
                 height: 3
                 radius: 2
-                color: "#20ffffff"
+                color: "#0fffffff"
 
                 Rectangle {
                     width: todoModel.count > 0
@@ -195,10 +195,10 @@ PanelWindow {
                             height: 48
 
                             radius: 14
-                            color: model.done ? "#18ffffff" : "#22ffffff"
+                            color: model.done ? "#0cffffff" : "#14ffffff"
 
                             border.width: 1
-                            border.color: model.done ? "#10ffffff" : "#20ffffff"
+                            border.color: model.done ? "#08ffffff" : "#10ffffff"
 
                             Behavior on color { ColorAnimation { duration: 200 } }
 
@@ -221,7 +221,7 @@ PanelWindow {
                                     radius: 6
                                     color: model.done ? "#a6e3a1" : "transparent"
                                     border.width: 1.5
-                                    border.color: model.done ? "#a6e3a1" : "#44ffffff"
+                                    border.color: model.done ? "#a6e3a1" : "#28ffffff"
 
                                     Behavior on color { ColorAnimation { duration: 150 } }
                                     Behavior on border.color { ColorAnimation { duration: 150 } }
@@ -244,7 +244,7 @@ PanelWindow {
                                 Text {
                                     Layout.fillWidth: true
                                     text: model.text
-                                    color: model.done ? "#50ffffff" : "#e8e8e8"
+                                    color: model.done ? "#40ffffff" : "#e8e8e8"
                                     font.pixelSize: 14
                                     font.strikeout: model.done
                                     elide: Text.ElideRight
@@ -296,10 +296,10 @@ PanelWindow {
                 height: 48
 
                 radius: 14
-                color: "#28ffffff"
+                color: "#12ffffff"
 
                 border.width: 1
-                border.color: inputField.activeFocus ? "#50ffffff" : "#18ffffff"
+                border.color: inputField.activeFocus ? "#30ffffff" : "#0cffffff"
 
                 Behavior on border.color {
                     ColorAnimation { duration: 150 }
@@ -326,7 +326,7 @@ PanelWindow {
                             anchors.fill: parent
                             anchors.verticalCenter: parent.verticalCenter
                             text: "Add a task…"
-                            color: "#55ffffff"
+                            color: "#30ffffff"
                             font: inputField.font
                             visible: inputField.text.length === 0 && !inputField.activeFocus
                         }
@@ -349,7 +349,7 @@ PanelWindow {
                         width: 30
                         height: 30
                         radius: 10
-                        color: addMouse.containsPress ? "#55ffffff" : "#35ffffff"
+                        color: addMouse.containsPress ? "#38ffffff" : "#1effffff"
 
                         Behavior on color { ColorAnimation { duration: 100 } }
 
@@ -379,7 +379,7 @@ PanelWindow {
                 Layout.alignment: Qt.AlignHCenter
                 visible: todoModel.count === 0
                 text: "Nothing here. Add a task ↑"
-                color: "#30ffffff"
+                color: "#18ffffff"
                 font.pixelSize: 13
             }
         }

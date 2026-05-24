@@ -210,9 +210,9 @@ PanelWindow {
                         width:  noteColumn.width
                         height: 44
                         radius: 14
-                        color:  rowMouse.containsMouse ? "#2affffff" : "#1effffff"
+                        color:  rowMouse.containsMouse ? "#22ffffff" : "#15ffffff"
                         border.width: 1
-                        border.color: "#20ffffff"
+                        border.color: "#10ffffff"
 
                         Behavior on color { ColorAnimation { duration: 150 } }
 

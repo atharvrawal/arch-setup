@@ -14,7 +14,7 @@ sudo pacman -S  curl git nvim tree nmap wget base-devel cmake net-tools iw netwo
                 thunar gvfs gvfs-mtp gvfs-smb \
                 pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack wireplumber pavucontrol pamixer pulsemixer\
                 bluez bluez-utils bluez-obex blueman \
-                hyprland hyprlock hypridle hyprpaper jq socat waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-hyprland \
+                hyprland hyprlock hypridle hyprpaper jq socat waybar xorg-xwayland wl-clipboard grim slurp xdg-desktop-portal-hyprland quickshell \
                 alacritty foot fish eza btop qbittorrent wofi dunst qt6-positioning \
                 flatpak ntfs-3g polkit lxqt-policykit libx11 webkit2gtk brightnessctl unzip fontforge \
                 libva mesa hostapd qt6ct \
@@ -55,7 +55,7 @@ echo ""
 
 
 # ---------- Paru Package Install ----------
-paru -S visual-studio-code-bin colloid-gtk-theme-git colloid-icon-theme-git \
+paru -S visual-studio-code-bin flat-remix-gtk colloid-icon-theme-git \
         firefox-developer-edition ttf-hack-nerd power-profiles-daemon brave-origin-nightly-bin\
         --needed --noconfirm
 
@@ -96,7 +96,7 @@ echo "alpha=0.7" >> ~/.config/foot/foot.ini
 
 
 # ---------- Dark Theme Thunar ----------
-gsettings set org.gnome.desktop.interface gtk-theme Colloid-Dark
+gsettings set org.gnome.desktop.interface gtk-theme Flat-Remix-GTK-Grey-Darkest-Solid
 gsettings set org.gnome.desktop.interface icon-theme Colloid-dark
 
 # Thunar Setup (xdg-open)
@@ -137,8 +137,7 @@ echo "✅ Waybar symlink successfully setup"
 
 # QuickShell
 rm -rf ~/.config/quickshell
-mkdir -p ~/.config/quickshell
-ln -s ~/arch-setup/hyprland/quickshell/shell.qml ~/.config/quickshell/shell.qml >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/quickshell ~/.config/quickshell >/dev/null 2>&1
 echo "✅ QuickShell symlink successfully setup"
 
 # Dunst
