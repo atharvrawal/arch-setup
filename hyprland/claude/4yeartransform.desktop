@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=4yeartransform Claude
+Exec=brave-origin-beta --profile-directory="Profile 4" --app="https://claude.ai"
+Icon=/home/atharv/arch-setup/hyprland/claude/claude-ai-icon.svg
+Terminal=false
+Categories=Network;
