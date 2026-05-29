@@ -10,7 +10,7 @@ PanelWindow {
     id: root
 
     WlrLayershell.layer: WlrLayer.Background
-    WlrLayershell.namespace: "todo-widget"
+    WlrLayershell.namespace: "Reminder"
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
 
     focusable: true
@@ -21,14 +21,14 @@ PanelWindow {
     }
 
     margins {
-        left: 20
-        top: 20
+        left: 15
+        top: 15
     }
 
-    implicitWidth: 300
+    implicitWidth: 250
 
-    // Grows with content: fixed chrome ~130px + 68px per task, capped at 600
-    implicitHeight: Math.min(1000, 160 + todoModel.count * (48+8) + (todoModel.count === 0 ? 36 : 0))
+    // Grows with content: fixed chrome + 40px per task (36 tile + 4 spacing), capped at 750
+    implicitHeight: Math.min(750, 115 + todoModel.count * (36+4) + (todoModel.count === 0 ? 27 : 0))
 
     Behavior on implicitHeight {
         NumberAnimation { duration: 200; easing.type: Easing.OutCubic }
@@ -105,27 +105,27 @@ PanelWindow {
     Rectangle {
         anchors.fill: parent
 
-        radius: 24
+        radius: 18
         color: "#e0080808"
 
         border.width: 0
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.topMargin: 20
-            anchors.leftMargin: 20
-            anchors.rightMargin: 20
-            anchors.bottomMargin: 20
-            spacing: 14
+            anchors.topMargin: 15
+            anchors.leftMargin: 15
+            anchors.rightMargin: 15
+            anchors.bottomMargin: 15
+            spacing: 6
 
             // ── Header ───────────────────────────────────────────────────────
             RowLayout {
                 Layout.fillWidth: true
 
                 Text {
-                    text: "Tasks"
+                    text: "Reminder"
                     color: "#f0f0f0"
-                    font.pixelSize: 26
+                    font.pixelSize: 20
                     font.weight: Font.Bold
                     font.letterSpacing: -0.5
                 }
@@ -144,7 +144,7 @@ PanelWindow {
 
                     text: done + "/" + todoModel.count
                     color: "#38ffffff"
-                    font.pixelSize: 13
+                    font.pixelSize: 12
                     font.weight: Font.Medium
                 }
             }
@@ -170,8 +170,6 @@ PanelWindow {
                 }
             }
 
-            
-
             // ── Todo list ─────────────────────────────────────────────────────
             Flickable {
                 Layout.fillWidth: true
@@ -183,7 +181,7 @@ PanelWindow {
                 Column {
                     id: todoColumn
                     width: parent.width
-                    spacing: 8
+                    spacing: 4   // matches tracker item list spacing
 
                     Repeater {
                         model: todoModel
@@ -192,9 +190,9 @@ PanelWindow {
                             id: todoItem
 
                             width: todoColumn.width
-                            height: 48
+                            height: 36   // matches tracker item height
 
-                            radius: 14
+                            radius: 10   // matches tracker item radius
                             color: model.done ? "#0cffffff" : "#14ffffff"
 
                             border.width: 1
@@ -210,15 +208,15 @@ PanelWindow {
 
                             RowLayout {
                                 anchors.fill: parent
-                                anchors.leftMargin: 14
-                                anchors.rightMargin: 12
-                                spacing: 12
+                                anchors.leftMargin: 10   // matches tracker
+                                anchors.rightMargin: 8   // matches tracker
+                                spacing: 9               // matches tracker
 
                                 Rectangle {
                                     id: checkRect
-                                    width: 20
-                                    height: 20
-                                    radius: 6
+                                    width: 16    // matches tracker checkbox
+                                    height: 16
+                                    radius: 5
                                     color: model.done ? "#a6e3a1" : "transparent"
                                     border.width: 1.5
                                     border.color: model.done ? "#a6e3a1" : "#28ffffff"
@@ -231,7 +229,7 @@ PanelWindow {
                                         text: "✓"
                                         visible: model.done
                                         color: "#1a1a1a"
-                                        font.pixelSize: 12
+                                        font.pixelSize: 12   // matches tracker checkmark
                                         font.bold: true
                                     }
 
@@ -245,7 +243,7 @@ PanelWindow {
                                     Layout.fillWidth: true
                                     text: model.text
                                     color: model.done ? "#40ffffff" : "#e8e8e8"
-                                    font.pixelSize: 14
+                                    font.pixelSize: 13   // matches tracker label
                                     font.strikeout: model.done
                                     elide: Text.ElideRight
 
@@ -253,9 +251,9 @@ PanelWindow {
                                 }
 
                                 Rectangle {
-                                    width: 26
-                                    height: 26
-                                    radius: 8
+                                    width: 22    // matches tracker delete button
+                                    height: 22
+                                    radius: 7
                                     color: delMouse.containsPress ? "#66331111" : "#44221111"
                                     visible: delMouse.containsMouse || todoItemMouse.containsMouse
 
@@ -265,7 +263,7 @@ PanelWindow {
                                         anchors.centerIn: parent
                                         text: "×"
                                         color: "#ff8080"
-                                        font.pixelSize: 16
+                                        font.pixelSize: 16   // matches tracker
                                     }
 
                                     MouseArea {
@@ -293,9 +291,9 @@ PanelWindow {
             // ── Input row ────────────────────────────────────────────────────
             Rectangle {
                 Layout.fillWidth: true
-                height: 48
+                height: 36     // matches tracker add-input height
 
-                radius: 14
+                radius: 10     // matches tracker add-input radius
                 color: "#12ffffff"
 
                 border.width: 1
@@ -307,9 +305,9 @@ PanelWindow {
 
                 RowLayout {
                     anchors.fill: parent
-                    anchors.leftMargin: 14
-                    anchors.rightMargin: 8
-                    spacing: 6
+                    anchors.leftMargin: 10   // matches tracker
+                    anchors.rightMargin: 6   // matches tracker
+                    spacing: 6               // matches tracker
 
                     TextInput {
                         id: inputField
@@ -317,7 +315,7 @@ PanelWindow {
                         Layout.fillWidth: true
 
                         color: "white"
-                        font.pixelSize: 15
+                        font.pixelSize: 13   // matches tracker add-field font
                         activeFocusOnPress: true
                         selectByMouse: true
                         clip: true
@@ -346,9 +344,9 @@ PanelWindow {
                     }
 
                     Rectangle {
-                        width: 30
-                        height: 30
-                        radius: 10
+                        width: 26    // matches tracker add button
+                        height: 26
+                        radius: 8
                         color: addMouse.containsPress ? "#38ffffff" : "#1effffff"
 
                         Behavior on color { ColorAnimation { duration: 100 } }
@@ -357,7 +355,7 @@ PanelWindow {
                             anchors.centerIn: parent
                             text: "+"
                             color: "white"
-                            font.pixelSize: 22
+                            font.pixelSize: 22   // matches tracker
                             font.weight: Font.Light
                         }
 
@@ -380,7 +378,7 @@ PanelWindow {
                 visible: todoModel.count === 0
                 text: "Nothing here. Add a task ↑"
                 color: "#18ffffff"
-                font.pixelSize: 13
+                font.pixelSize: 10
             }
         }
     }

@@ -38,7 +38,8 @@ PanelWindow {
                 { name: "Dots.qml",   path: "/home/atharv/.config/quickshell/Dots.qml"   },
                 { name: "Notes.qml",  path: "/home/atharv/.config/quickshell/Notes.qml"  },
 		{ name: "Todo.qml",   path: "/home/atharv/.config/quickshell/Todo.qml"   },
-		{ name: "Time.qml",  path: "/home/atharv/.config/quickshell/Time.qml"   } 
+		{ name: "Time.qml",   path: "/home/atharv/.config/quickshell/Time.qml"   }, 
+		{ name: "Tracker.qml",   path: "/home/atharv/.config/quickshell/Tracker.qml"   } 
             ]
         },
         {

@@ -18,12 +18,12 @@ PanelWindow {
     }
 
     margins {
-        left: 20
-        bottom: 20
+        left: 18
+        bottom: 18
     }
 
-    implicitWidth: 260
-    implicitHeight: spinnersVisible ? 215 : 170 
+    implicitWidth: 234
+    implicitHeight: spinnersVisible ? 194 : 153
 
     Behavior on implicitHeight {
         NumberAnimation { duration: 100; easing.type: Easing.InOutQuad }
@@ -88,19 +88,19 @@ PanelWindow {
     Rectangle {
         id: card
         anchors.fill: parent
-        radius: 24
+        radius: 22
         color: "#c0080808"
 
         ColumnLayout {
             anchors.fill: parent
-            anchors.margins: 20
-            spacing: 12
+            anchors.margins: 18
+            spacing: 11
 
             // ── Full-width mode toggle ──────────────────────────────────────────
             Rectangle {
                 Layout.fillWidth: true
-                height: 28
-                radius: 10
+                height: 25
+                radius: 9
                 color: "#0fffffff"
                 border.width: 1
                 border.color: "#0cffffff"
@@ -110,7 +110,7 @@ PanelWindow {
                     y: 2
                     width: parent.width / 2 - 2
                     height: parent.height - 4
-                    radius: 8
+                    radius: 7
                     color: "#1effffff"
                     Behavior on x { NumberAnimation { duration: 100; easing.type: Easing.OutCubic } }
                 }
@@ -125,7 +125,7 @@ PanelWindow {
                             anchors.centerIn: parent
                             text: "Timer"
                             color: root.mode === 0 ? "#f0f0f0" : "#30ffffff"
-                            font.pixelSize: 13
+                            font.pixelSize: 12
                             font.weight: Font.Medium
                             Behavior on color { ColorAnimation { duration: 150 } }
                         }
@@ -142,7 +142,7 @@ PanelWindow {
                             anchors.centerIn: parent
                             text: "Stopwatch"
                             color: root.mode === 1 ? "#f0f0f0" : "#30ffffff"
-                            font.pixelSize: 13
+                            font.pixelSize: 12
                             font.weight: Font.Medium
                             Behavior on color { ColorAnimation { duration: 150 } }
                         }
@@ -181,7 +181,7 @@ PanelWindow {
                     : root.secondsToHMS(root.swElapsed)
                 visible: !(root.mode === 0 && root.spinnersVisible)
                 color: root.timerDone && root.mode === 0 ? "#f38ba8" : "#f0f0f0"
-                font.pixelSize: 26
+                font.pixelSize: 23
                 font.weight: Font.Bold
                 font.letterSpacing: -0.5
                 font.family: "monospace"
@@ -191,8 +191,8 @@ PanelWindow {
             // ── Spinners (Timer mode, not running) ─────────────────────────────
             Rectangle {
                 Layout.fillWidth: true
-                height: 48
-                radius: 14
+                height: 43
+                radius: 13
                 color: "#12ffffff"
                 border.width: 1
                 border.color: "#0cffffff"
@@ -208,7 +208,7 @@ PanelWindow {
                         anchors.verticalCenter: parent.verticalCenter
                         text: ":"
                         color: "#28ffffff"
-                        font.pixelSize: 18
+                        font.pixelSize: 16
                         font.weight: Font.Bold
                         font.family: "monospace"
                     }
@@ -219,7 +219,7 @@ PanelWindow {
                         anchors.verticalCenter: parent.verticalCenter
                         text: ":"
                         color: "#28ffffff"
-                        font.pixelSize: 18
+                        font.pixelSize: 16
                         font.weight: Font.Bold
                         font.family: "monospace"
                     }
@@ -231,17 +231,16 @@ PanelWindow {
             // ── Buttons ────────────────────────────────────────────────────────
             RowLayout {
                 Layout.fillWidth: true
-                spacing: 10
+                spacing: 9
 
                 Rectangle {
                     Layout.fillWidth: true
-                    height: 34
-                    radius: 12
+                    height: 31
+                    radius: 11
                     color: playMouse.containsPress ? "#38ffffff" : "#1effffff"
                     border.width: 1
                     border.color: "#0cffffff"
                     Behavior on color { ColorAnimation { duration: 100 } }
-
 
                     Text {
                         anchors.centerIn: parent
@@ -249,9 +248,9 @@ PanelWindow {
                         anchors.verticalCenterOffset: (root.mode === 0 ? root.timerRunning : root.swRunning) ? 0 : -2
                         text: (root.mode === 0 ? root.timerRunning : root.swRunning) ? "⏸" : "▶"
                         color: "#f0f0f0"
-                        font.pixelSize: 16
+                        font.pixelSize: 14
                     }
-                    
+
                     MouseArea {
                         id: playMouse
                         anchors.fill: parent
@@ -277,9 +276,9 @@ PanelWindow {
                 }
 
                 Rectangle {
-                    width: 34
-                    height: 34
-                    radius: 12
+                    width: 31
+                    height: 31
+                    radius: 11
                     color: resetMouse.containsPress ? "#44221111" : "#14ffffff"
                     border.width: 1
                     border.color: "#0cffffff"
@@ -289,7 +288,7 @@ PanelWindow {
                         anchors.centerIn: parent
                         text: "↺"
                         color: "#ff8080"
-                        font.pixelSize: 18
+                        font.pixelSize: 16
                     }
 
                     MouseArea {
@@ -321,8 +320,8 @@ PanelWindow {
         property int value:    0
         property int maxValue: 59
 
-        width: 72
-        height: 56
+        width: 65
+        height: 50
 
         function increment() { value = value >= maxValue ? 0 : value + 1 }
         function decrement() { value = value <= 0 ? maxValue : value - 1 }
@@ -332,9 +331,9 @@ PanelWindow {
 
             Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter
-                width: 44
-                height: 26
-                radius: 6
+                width: 40
+                height: 23
+                radius: 5
                 color: inputField.activeFocus ? "#1affffff" : "transparent"
                 Behavior on color { ColorAnimation { duration: 120 } }
 
@@ -344,7 +343,7 @@ PanelWindow {
                     width: parent.width - 4
                     text: root.pad(sf.value)
                     color: "#f0f0f0"
-                    font.pixelSize: 15
+                    font.pixelSize: 14
                     font.weight: Font.Bold
                     font.family: "monospace"
                     horizontalAlignment: Text.AlignHCenter
