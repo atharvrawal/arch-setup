@@ -19,6 +19,7 @@ PanelWindow {
     // ── CONFIG ─────────────────────────────────────────────────────────────────
     readonly property int colCardWidth: 200   // width of each column card
     readonly property int colGap:        15   // gap between columns
+    readonly property int numColumns:     5   // ← change this to add/remove columns
     // ──────────────────────────────────────────────────────────────────────────
 
     WlrLayershell.layer:         WlrLayer.Background
@@ -82,6 +83,8 @@ PanelWindow {
         settings.lastDate   = todayString()
     }
 
+    
+
     function loadData() {
         var today = todayString()
         try {
@@ -92,6 +95,12 @@ PanelWindow {
                         for (var j = 0; j < stored[i].items.length; j++)
                             stored[i].items[j].done = false
                 }
+                // Pad with blank columns if numColumns increased
+                while (stored.length < numColumns)
+                    stored.push({ name: "New Column", items: [] })
+                // Trim if numColumns decreased
+                if (stored.length > numColumns)
+                    stored = stored.slice(0, numColumns)
                 columnsData = stored
                 settings.lastDate = today
                 saveData()
