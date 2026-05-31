@@ -22,6 +22,7 @@ get_icon() {
     brave-origin-beta) echo "" ;;
     wifi-tui) echo " " ;;
     bluetooth) echo "󰂯" ;;
+    brave-claude.ai__-Default) echo "" ;;
     *) echo "" ;;
   esac
 }

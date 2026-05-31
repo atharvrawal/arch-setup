@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ~/.config/claude
 rm -rf ~/.local/share/applications/04-Claude.desktop
 rm -rf ~/.local/share/applications/124-Claude.desktop
 rm -rf ~/.local/share/applications/pes.desktop

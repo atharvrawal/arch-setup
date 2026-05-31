@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=ar124 Claude
-Exec=brave-origin-beta --profile-directory="Profile 2" --app="https://claude.ai"
+Exec=brave-origin-beta --user-data-dir="$HOME/.config/claude/ar124" --app="https://claude.ai"
 Icon=/home/atharv/arch-setup/hyprland/claude/claude-ai-icon.svg
 Terminal=false
 Categories=Network;

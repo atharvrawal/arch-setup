@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=PES Claude
-Exec=brave-origin-beta --profile-directory="Profile 3" --app="https://claude.ai"
+Exec=brave-origin-beta --user-data-dir="$HOME/.config/claude/pes" --app="https://claude.ai"
 Icon=/home/atharv/arch-setup/hyprland/claude/claude-ai-icon.svg
 Terminal=false
 Categories=Network;

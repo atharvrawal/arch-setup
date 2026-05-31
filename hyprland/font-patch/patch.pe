@@ -17,5 +17,11 @@ Scale(75)
 Move(-10, 30)
 SetWidth(1500)
 
+Select(0uE903)
+Import("icon4.svg")
+Scale(70)
+Move(-300,0)
+SetWidth(1500)
+
 Generate($2)
 Quit()
