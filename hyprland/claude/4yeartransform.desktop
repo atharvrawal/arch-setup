@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=4yeartransform Claude
-Exec=brave-origin-beta --user-data-dir="$HOME/.config/claude/4yeartransform" --app="https://claude.ai"
+Exec=google-chrome-stable --profile-directory="Profile 4"
 Icon=/home/atharv/arch-setup/hyprland/claude/claude-ai-icon.svg
 Terminal=false
 Categories=Network;

@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=ar04 Claude
-Exec=brave-origin-beta --user-data-dir="$HOME/.config/claude/ar04" --app="https://claude.ai"
+Exec=google-chrome-stable --profile-directory="Profile 1"
 Icon=/home/atharv/arch-setup/hyprland/claude/claude-ai-icon.svg
 Terminal=false
 Categories=Network;

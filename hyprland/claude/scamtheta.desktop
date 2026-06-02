@@ -1,8 +1,8 @@
 [Desktop Entry]
 Version=1.0
 Type=Application
-Name=ar124 Claude
-Exec=google-chrome-stable --profile-directory="Profile 2"
+Name=scamtheta Claude
+Exec=google-chrome-stable --profile-directory="Profile 6"
 Icon=/home/atharv/arch-setup/hyprland/claude/claude-ai-icon.svg
 Terminal=false
 Categories=Network;
