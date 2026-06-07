@@ -73,92 +73,92 @@ window#waybar {
 #power-profiles-daemon,
 #tray,
 #custom-pomodoro {
-    padding: 3px 12px;
+    padding: 6px 12px;
     margin: 5px 5px 5px 5px;
     border-radius: 10px;
     background: rgba(255,255,255,0.07);
 }
 
 #custom-notifications {
-    color: #7dcfff;
+    color: #ffffff;
 }
 
 /* Bluetooth */
 #bluetooth {
-    color: #7dcfff;
+    color: #ffffff;
 }
 
 #bluetooth.off {
-    color: #888888;
+    color: #ffffff;
 }
 
 #bluetooth.connected {
-    color: #9ece6a;
+    color: #ffffff;
 }
 
 /* Clock */
 #clock {
-    color: #7aa2f7;
+    color: #ffffff; 
     font-weight: bold;
 }
 
 #custom-pomodoro{
     font-weight: bold;
-    color: #c30010;
+    color: #ffffff;
 }
 
 /* CPU */
 #cpu {
-    color: #9ece6a;
+    color: #ffffff;
 }
 
 /* Memory */
 #memory {
-    color: #e0af68;
+    color: #ffffff;
 }
 
 /* Temperature */
 #temperature {
-    color: #9ece6a;   /* cool */
+    color: #ffffff;   /* cool */
 }
 
 #temperature.warning {
-    color: #e0af68;   /* warm */
+    color: #ffffff;   /* warm */
 }
 
 #temperature.critical {
-    color: #f7768e;   /* hot */
+    color: #ffffff;   /* hot */
 }
 
 /* Network */
 #network {
-    color: #7dcfff;
+    color: #ffffff;
 }
 
 #network.disconnected {
-    color: #f7768e;
+    color: #ffffff;
 }
 
 /* Battery */
 #battery {
-    color: #9ece6a;
+    color: #ffffff;
 }
 
 #battery.warning {
-    color: #e0af68;
+    color: #ffffff;
 }
 
 #battery.critical {
-    color: #f7768e;
+    color: #ffffff;
 }
 
 /* Audio */
 #pulseaudio {
-    color: #bb9af7;
+    color: #ffffff;
 }
 
 #pulseaudio.muted {
-    color: #888888;
+    color: #ffffff;
 }
 
 /* Tray */
@@ -169,27 +169,27 @@ window#waybar {
 #custom-power {
     padding: 0 12px;
     margin: 4px 4px;
-    color: #e0e0e0;
+    color: #ffffff;
 }
 
 #custom-power:hover {
-    color: #f7768e;
+    color: #ffffff;
 }
 
 
 /* Performance */
 #power-profiles-daemon.performance {
-    color: #f7768e;
+    color: #ffffff;
 }
 
 /* Balanced */
 #power-profiles-daemon.balanced {
-    color: #e0af68;
+    color: #ffffff;
 }
 
 /* Power saver */
 #power-profiles-daemon.power-saver {
-    color: #9ece6a;
+    color: #ffffff;
 }
 
 /* Tooltip */
@@ -199,6 +199,6 @@ tooltip {
 }
 
 tooltip label {
-    color: #e0e0e0;
+    color: #ffffff;
 }
 

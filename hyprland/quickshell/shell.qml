@@ -3,7 +3,7 @@ import Quickshell.Wayland
 import QtQuick
 
 ShellRoot {
-    Schedule {}
+    Tasks {}
     Stopwatch {}
     Notes {}
     Dots {} 

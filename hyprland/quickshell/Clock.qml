@@ -4,6 +4,8 @@ import Quickshell.Wayland
 
 ShellRoot {
     id: root
+Variants {
+    model: Quickshell.screens
 
     PanelWindow {
 	id: win
@@ -113,4 +115,5 @@ ShellRoot {
             }
         }
     }
+}
 }

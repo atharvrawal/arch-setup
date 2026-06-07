@@ -9,6 +9,10 @@ alias resetclock='sudo cpupower frequency-set -u 3.30GHz'
 alias win-off="sudo umount /mnt/Windows && echo 1 | sudo tee /sys/bus/pci/devices/0000:02:00.0/remove"
 alias win-on="echo 1 | sudo tee /sys/bus/pci/rescan && sleep 2 && sudo mount /mnt/Windows"
 
+
+alias nasmount='sudo mkdir -p /mnt/nas && sudo mount -t cifs //192.168.1.41/NAS /mnt/nas -o username=rpi,password=rpi,uid=1000,gid=1000,file_mode=0777,dir_mode=0777'
+alias nasumount='sudo umount -l /mnt/nas && sudo rmdir /mnt/nas'
+
 # Only run in interactive shells
 if status is-interactive
 	fastfetch

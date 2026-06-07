@@ -10,7 +10,7 @@ PanelWindow {
     id: root
 
     WlrLayershell.layer: WlrLayer.Background
-    WlrLayershell.namespace: "Schedule"
+    WlrLayershell.namespace: "Tasks"
     WlrLayershell.keyboardFocus: WlrKeyboardFocus.OnDemand
 
     focusable: true
@@ -123,7 +123,7 @@ PanelWindow {
                 Layout.fillWidth: true
 
                 Text {
-		    text: "Schedule"
+		    text: "Tasks"
                     color: "#f0f0f0"
                     font.pixelSize: 20
                     font.weight: Font.Bold
