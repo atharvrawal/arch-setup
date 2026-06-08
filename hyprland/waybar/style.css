@@ -23,12 +23,12 @@ window#waybar {
     margin: 2px 2px;
     border-radius: 8px;
     background: rgba(255,255,255,0.06);
-    color: #777777;
+    color: #bdbdbd;
 }
 
 #workspaces button:hover {
     background: rgba(255,255,255,0.10);
-    color: #d0d0d0;
+    color: #bdbdbd;
 }
 
 #workspaces button.focused {
@@ -48,7 +48,7 @@ window#waybar {
     margin: 5px 5px;
     border-radius: 8px;
     background: rgba(255,255,255,0.07);
-    color: #d0d0d0;
+    color: #bdbdbd;
 
     /* important for spacing */
     letter-spacing: 6px;
@@ -80,85 +80,85 @@ window#waybar {
 }
 
 #custom-notifications {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Bluetooth */
 #bluetooth {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 #bluetooth.off {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 #bluetooth.connected {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Clock */
 #clock {
-    color: #ffffff; 
+    color: #bdbdbd; 
     font-weight: bold;
 }
 
 #custom-pomodoro{
     font-weight: bold;
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* CPU */
 #cpu {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Memory */
 #memory {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Temperature */
 #temperature {
-    color: #ffffff;   /* cool */
+    color: #bdbdbd;   /* cool */
 }
 
 #temperature.warning {
-    color: #ffffff;   /* warm */
+    color: #bdbdbd;   /* warm */
 }
 
 #temperature.critical {
-    color: #ffffff;   /* hot */
+    color: #bdbdbd;   /* hot */
 }
 
 /* Network */
 #network {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 #network.disconnected {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Battery */
 #battery {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 #battery.warning {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 #battery.critical {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Audio */
 #pulseaudio {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 #pulseaudio.muted {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Tray */
@@ -169,27 +169,27 @@ window#waybar {
 #custom-power {
     padding: 0 12px;
     margin: 4px 4px;
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 #custom-power:hover {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 
 /* Performance */
 #power-profiles-daemon.performance {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Balanced */
 #power-profiles-daemon.balanced {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Power saver */
 #power-profiles-daemon.power-saver {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
 /* Tooltip */
@@ -199,6 +199,6 @@ tooltip {
 }
 
 tooltip label {
-    color: #ffffff;
+    color: #bdbdbd;
 }
 
