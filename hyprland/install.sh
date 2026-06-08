@@ -55,7 +55,7 @@ echo ""
 
 
 # ---------- Paru Package Install ----------
-paru -S visual-studio-code-bin flat-remix-gtk colloid-icon-theme-git \
+paru -S visual-studio-code-bin flat-remix-gtk flat-remix \
         firefox-developer-edition ttf-hack-nerd power-profiles-daemon brave-origin-nightly-bin\
         --needed --noconfirm
 
@@ -86,7 +86,7 @@ echo ""
 # Fish Setup
 mkdir ~/.config/fish
 chsh -s /usr/bin/fish
-ln -s ~/arch-setup/sway/config.fish ~/.config/fish/config.fish >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/config.fish ~/.config/fish/config.fish >/dev/null
 
 mkdir -p ~/.config/foot
 echo "font=Hack Nerd Font:size=11" >> ~/.config/foot/foot.ini
@@ -97,7 +97,7 @@ echo "alpha=0.7" >> ~/.config/foot/foot.ini
 
 # ---------- Dark Theme Thunar ----------
 gsettings set org.gnome.desktop.interface gtk-theme Flat-Remix-GTK-Grey-Darkest-Solid
-gsettings set org.gnome.desktop.interface icon-theme Colloid-dark
+gsettings set org.gnome.desktop.interface icon-theme Flat-Remix-Black-Dark
 
 # Thunar Setup (xdg-open)
 mkdir -p ~/.local/share/applications
@@ -114,7 +114,7 @@ EOF
 update-desktop-database ~/.local/share/applications
 
 rm -rf ~/.config/Thunar
-ln -s ~/arch-setup/hyprland/Thunar ~/.config/Thunar >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/Thunar ~/.config/Thunar >/dev/null
 echo "✅ Dark Theme & Thunar Setup Successfull..."
 echo ""
 
@@ -128,22 +128,22 @@ echo ""
 # Waybar
 rm -rf ~/.config/waybar
 mkdir -p ~/.config/waybar
-ln -s ~/arch-setup/hyprland/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/waybar/style.css ~/.config/waybar/style.css >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/waybar/ws_icons_event.sh ~/.config/waybar/ws_icons_event.sh >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/waybar/pomodoro.sh ~/.config/waybar/pomodoro.sh >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/waybar/config.jsonc ~/.config/waybar/config.jsonc >/dev/null
+ln -s ~/arch-setup/hyprland/waybar/style.css ~/.config/waybar/style.css >/dev/null
+ln -s ~/arch-setup/hyprland/waybar/toggle-waybar.sh ~/.config/waybar/toggle-waybar.sh >/dev/null
+ln -s ~/arch-setup/hyprland/waybar/ws_icons_event.sh ~/.config/waybar/ws_icons_event.sh >/dev/null
+ln -s ~/arch-setup/hyprland/waybar/pomodoro.sh ~/.config/waybar/pomodoro.sh >/dev/null
 echo "✅ Waybar symlink successfully setup"
 
 # QuickShell
 rm -rf ~/.config/quickshell
-ln -s ~/arch-setup/hyprland/quickshell ~/.config/quickshell >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/quickshell ~/.config/quickshell >/dev/null
 echo "✅ QuickShell symlink successfully setup"
 
 # Dunst
 rm -rf ~/.config/dunst
 mkdir -p ~/.config/dunst
-ln -s ~/arch-setup/hyprland/dunst/dunstrc ~/.config/dunst/dunstrc >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/dunst/dunstrc ~/.config/dunst/dunstrc >/dev/null
 echo "✅ Dunst symlink successfully setup"
 
 # Alacritty
@@ -160,9 +160,9 @@ EOF
 # Hyprland
 rm -rf ~/.config/hypr
 mkdir -p ~/.config/hypr
-ln -s ~/arch-setup/hyprland/hypr/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 2>&1 
-ln -s ~/arch-setup/hyprland/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf >/dev/null 2>&1
-ln -s ~/arch-setup/hyprland/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf >/dev/null 2>&1
+ln -s ~/arch-setup/hyprland/hypr/hyprland.conf ~/.config/hypr/hyprland.conf >/dev/null 
+ln -s ~/arch-setup/hyprland/hypr/hyprpaper.conf ~/.config/hypr/hyprpaper.conf >/dev/null
+ln -s ~/arch-setup/hyprland/hypr/hyprlock.conf ~/.config/hypr/hyprlock.conf >/dev/null 
 mkdir -p ~/Pictures/Wallpapers
-cp ~/arch-setup/hyprland/wallpapers/* ~/Pictures/Wallpapers/ -r >/dev/null 2>&1
+cp ~/arch-setup/hyprland/wallpapers/* ~/Pictures/Wallpapers/ -r >/dev/null 
 echo "✅ hyprland.conf hyprlock.conf & hyprpaper.conf symlink successful setup"
