@@ -43,12 +43,12 @@ fi
 
 # ---------- Paru Install ----------
 echo "Installing Paru..."
-git clone https://aur.archlinux.org/paru.git
-cd paru
+git clone https://aur.archlinux.org/paru.git ~/paru
+cd ~/paru
 makepkg -si --noconfirm
 paru --version
 cd .. 
-sudo rm -rf paru >/dev/null
+sudo rm -rf ~/paru >/dev/null
 echo "✅ Above Version is paru version and is Successfully Installed"
 echo ""
 
