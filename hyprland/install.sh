@@ -32,7 +32,6 @@ if [ "$choice" = "y" ] || [ "$choice" = "Y" ]; then
         # Rust Setup
         cd ~
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- --no-modify-path -y
-        echo 'source $HOME/.cargo/env' >> ~/.config/fish/config.fish
         echo "✅ Rust successfuly installed & added to PATH"
     fi
 else
@@ -87,6 +86,8 @@ echo ""
 mkdir ~/.config/fish
 chsh -s /usr/bin/fish
 ln -s ~/arch-setup/hyprland/config.fish ~/.config/fish/config.fish >/dev/null
+echo 'fish_add_path $HOME/.cargo/bin' >> ~/.config/fish/config.fish
+source ~/.config/fish/config.fish
 
 mkdir -p ~/.config/foot
 echo "font=Hack Nerd Font:size=11" >> ~/.config/foot/foot.ini
