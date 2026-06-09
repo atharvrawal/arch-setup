@@ -2,6 +2,7 @@ set -g fish_greeting ""
 alias ls='eza --icons'
 alias la='eza -la --icons'
 alias copy='wl-copy'
+alias mysql='mariadb -u root -pmysql'
 
 alias downclock='sudo cpupower frequency-set -u 1.0GHz'
 alias resetclock='sudo cpupower frequency-set -u 3.30GHz'
@@ -9,37 +10,34 @@ alias resetclock='sudo cpupower frequency-set -u 3.30GHz'
 alias win-off="sudo umount /mnt/Windows && echo 1 | sudo tee /sys/bus/pci/devices/0000:02:00.0/remove"
 alias win-on="echo 1 | sudo tee /sys/bus/pci/rescan && sleep 2 && sudo mount /mnt/Windows"
 
-
 alias nasmount='sudo mkdir -p /mnt/nas && sudo mount -t cifs //192.168.1.41/NAS /mnt/nas -o username=rpi,password=rpi,uid=1000,gid=1000,file_mode=0777,dir_mode=0777'
 alias nasumount='sudo umount -l /mnt/nas && sudo rmdir /mnt/nas'
 
 # Only run in interactive shells
 if status is-interactive
-	fastfetch
+    fastfetch
 end
 
 set -U fish_prompt_pwd_dir_length 0
 
 function fish_prompt
-	echo ''
-	set_color blue
-	echo -n (prompt_pwd)
+    echo ''
+    set_color blue
+    echo -n (prompt_pwd)
 
-	# Git status
-	if test -d .git
-		set_color green
-		echo -n ' on  ' (git branch --show-current)'*'
-	end
-	set_color magenta
-	echo ''
-	echo -n '❯ '
-	set_color normal
+    # Git status
+    if test -d .git
+        set_color green
+        echo -n ' on  ' (git branch --show-current)'*'
+    end
+    set_color magenta
+    echo ''
+    echo -n '❯ '
+    set_color normal
 end
 
-
-
 function phonepull
-    set BASE "/storage/emulated/0"
+    set BASE /storage/emulated/0
 
     # detect subnet
     set SUBNET (ip route | awk '/default/ {print $3}' | sed 's/\.[0-9]*$//')
@@ -67,7 +65,7 @@ function phonepull
         set ITEM $CHOICE[2]
 
         if test -z "$ITEM"
-            echo "Cancelled"
+            echo Cancelled
             return 1
         end
 
@@ -76,7 +74,7 @@ function phonepull
             continue
         end
 
-        if test "$KEY" = "ctrl-d"
+        if test "$KEY" = ctrl-d
             set TARGET "$CUR/$ITEM"
             break
         end
