@@ -20,28 +20,6 @@ PanelWindow {
     readonly property int colCardWidth: 200   // width of each column card
     readonly property int colGap:        15   // gap between columns
     readonly property int numColumns:     5   // ← change this to add/remove columns
-    readonly property var trackerColumns: [
-        {
-            name: "Morning",
-            items: ["Wake up early", "Drink water", "Stretch / exercise", "Shower", "Eat breakfast"]
-        },
-        {
-            name: "Study",
-            items: ["Review notes", "Solve problems", "Watch lecture", "Summarise chapter"]
-        },
-        {
-            name: "Work",
-            items: ["Check emails", "Plan tasks", "Deep work block", "Code review"]
-        },
-        {
-            name: "Health",
-            items: ["Workout", "Track calories", "Sleep 8h", "No junk food"]
-        },
-        {
-            name: "Evening",
-            items: ["Read 30 min", "Journal", "Plan tomorrow", "Wind down"]
-        }
-    ]
     // ──────────────────────────────────────────────────────────────────────────
 
     WlrLayershell.layer:         WlrLayer.Background
@@ -61,7 +39,8 @@ PanelWindow {
 
     // ── Persistence ────────────────────────────────────────────────────────────
     Settings {
-        id: settings
+      id: settings
+        fileName: Qt.resolvedUrl("tracker.conf").toString().replace("file://", "")
         category: "tracker-widget"
         property string columnData: "[]"
         property string lastDate:   ""
